@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "element": "Home()"
+    },
+    {
+      "path": "/test",
+      "element": "Test()"
+    }
+  ]
+}
