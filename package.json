@@ -12,7 +12,8 @@
     "locomotive-scroll": "^4.1.4",
     "next": "14.2.15",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-fontawesome": "^1.7.1"
   },
   "devDependencies": {
     "@types/node": "^22.7.7",
