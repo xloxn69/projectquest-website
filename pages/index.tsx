@@ -4,7 +4,9 @@ import styles from '../styles/HomePage.module.css';
 const HomePage: React.FC = () => {
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
+      <header 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      className={styles.header}>
         <a href="index.html" className={styles.logoLink}>
           <div className={styles.logoContainer}>
             <img
