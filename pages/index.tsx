@@ -29,10 +29,10 @@ const HomePage = () => {
 
       <div className={styles.container} data-scroll-container>
         <header className={styles.header}>
-          <a href="index.html" className={styles.logoLink}>
+          <a href="/" className={styles.logoLink}>
             <div className={styles.logoContainer}>
               <img
-                src="your-logo-url"
+                src="/your-logo-url.png"
                 alt="Logo"
                 className={styles.logoImage}
               />
