@@ -1,35 +1,10 @@
-html, body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000000;
-    color: #ffffff;
-    min-height: 20vh;
-    position: relative;
-    background-image: 
-        radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%),
-        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
-        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 100% 100%, 50px 50px, 50px 50px;
-    background-position: center center, top left, top left;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,10 +16,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-body {
-    padding-top: 70px;
 }
 
 .logoContainer {
