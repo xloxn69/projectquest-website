@@ -1,15 +1,33 @@
-import React from 'react';
+import { useEffect } from 'react';
+import Head from 'next/head';
 import styles from '../styles/HomePage.module.css';
-import Head from 'next/head';  // Import Head from Next.js
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
+  useEffect(() => {
+    const LocomotiveScroll = require('locomotive-scroll').default;
+    new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+    });
+  }, []);
+
   return (
     <>
       <Head>
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Project Quest - Innovative Bots, Endless Possibilities</title>
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.css"
+        />
       </Head>
-      <div className={styles.container}>
+
+      <div className={styles.container} data-scroll-container>
         <header className={styles.header}>
           <a href="index.html" className={styles.logoLink}>
             <div className={styles.logoContainer}>

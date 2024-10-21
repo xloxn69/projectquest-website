@@ -1,173 +1,169 @@
+/* General layout */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    padding: 10px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logoContainer {
-    display: flex;
-    align-items: center;
-}
-
-.logoImage {
-    height: 30px;
-    margin-right: 10px;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.desktopNav {
-    display: flex;
-    gap: 20px;
-}
-
-.navItem {
-    position: relative;
-}
-
-.navLink {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navLink:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.authButtons {
-    display: flex;
-    gap: 10px;
-}
-
-.btnSignIn, .btnStart {
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.btnSignIn {
-    border: 1px solid white;
-    color: white;
-}
-
-.btnStart {
-    background-color: white;
-    color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hero {
-    text-align: center;
-    padding: 150px 0;
-}
-
-.hero h1 {
-    font-size: 60px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #a0a0a0;
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.btnPrimary {
-    background-color: #ffffff;
-    color: #0f0f1a;
-}
-
-.btnSecondary {
-    background-color: transparent;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-}
-
-.gradientBlur {
-    background: linear-gradient(to right, #FF00FF, #00FFFF, #FFFFFF, #8A2BE2);
-    filter: brightness(5) contrast(1.5);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    filter: blur(8px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.gradientClear {
-    background: linear-gradient(to right, #BF40BF, #06b6d4, #CCCCFF, #5D3FD3);
-    filter: brightness(1.15);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    position: relative;
-    z-index: 2;
+  text-align: center;
+  padding: 150px 0;
 }
 
 .innovativeGlow {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
-                 0 0 10px rgba(255, 255, 255, 0.4), 
-                 0 0 15px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+               0 0 10px rgba(255, 255, 255, 0.4),
+               0 0 15px rgba(255, 255, 255, 0.3);
 }
 
+.glowContainer {
+  position: relative;
+  display: inline-block;
+  font-size: 60px;
+}
+
+.gradientBlur {
+  background: linear-gradient(to right, #FF00FF, #00FFFF, #FFFFFF, #8A2BE2);
+  filter: brightness(5) contrast(1.5);
+  background-clip: text;
+  color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.gradientClear {
+  background: linear-gradient(to right, #BF40BF, #06b6d4, #CCCCFF, #5D3FD3);
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+/* Navigation Styling */
+.desktopNav {
+  display: flex;
+  gap: 20px;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.authButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.btnSignIn, .btnStart {
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btnSignIn {
+  border: 1px solid white;
+  color: white;
+}
+
+.btnStart {
+  background-color: white;
+  color: black;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.btnPrimary {
+  background-color: #ffffff;
+  color: #0f0f1a;
+}
+
+.btnSecondary {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+/* Footer Styling */
 .footerContent {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footerColumn {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .footerColumn h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-    font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .footerColumn a {
-    color: #a0a0a0;
-    text-decoration: none;
-    margin-bottom: 8px;
+  color: #a0a0a0;
+  text-decoration: none;
+  margin-bottom: 8px;
 }
 
 .footerColumn a:hover {
-    color: #ffffff;
+  color: #ffffff;
+}
+
+/* Media Query for small devices */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+  
+  .authButtons {
+    display: none;
+  }
+  
+  .mobileNav {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+  }
 }
