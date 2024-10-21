@@ -1,12 +1,8 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "path": "/",
-      "element": "Home()"
-    },
-    {
-      "path": "/test",
-      "element": "Test()"
+      "source": "/test",
+      "destination": "/test"
     }
   ]
 }
