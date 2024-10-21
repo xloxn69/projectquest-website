@@ -1,11 +1,29 @@
-/* General layout */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+/* General Styles */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-.header {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 20vh;
+  padding-top: 70px; /* Adjust based on header height */
+  background-image: 
+    radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%),
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 100% 100%, 50px 50px, 50px 50px;
+  background-position: center center, top left, top left;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Header Styles */
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,55 +35,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background-color 0.3s ease;
 }
 
-.hero {
-  text-align: center;
-  padding: 150px 0;
+.logo-container img {
+  height: 30px;
+  margin-right: 10px;
 }
 
-.innovativeGlow {
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
-               0 0 10px rgba(255, 255, 255, 0.4),
-               0 0 15px rgba(255, 255, 255, 0.3);
+.logo {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.glowContainer {
-  position: relative;
-  display: inline-block;
-  font-size: 60px;
-}
-
-.gradientBlur {
-  background: linear-gradient(to right, #FF00FF, #00FFFF, #FFFFFF, #8A2BE2);
-  filter: brightness(5) contrast(1.5);
-  background-clip: text;
-  color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.gradientClear {
-  background: linear-gradient(to right, #BF40BF, #06b6d4, #CCCCFF, #5D3FD3);
-  background-clip: text;
-  color: transparent;
-  position: relative;
-  z-index: 2;
-}
-
-/* Navigation Styling */
-.desktopNav {
+.desktop-nav {
   display: flex;
   gap: 20px;
 }
 
-.navItem {
+.nav-item {
   position: relative;
 }
 
-.navLink {
+.nav-link {
   color: #ffffff;
   text-decoration: none;
   font-size: 16px;
@@ -74,96 +66,192 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.navLink:hover {
+.nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.authButtons {
-  display: flex;
-  gap: 10px;
-}
-
-.btnSignIn, .btnStart {
+.auth-buttons a {
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
   font-size: 14px;
 }
 
-.btnSignIn {
+.btn-signin {
   border: 1px solid white;
   color: white;
 }
 
-.btnStart {
+.btn-start {
   background-color: white;
   color: black;
 }
 
-/* Buttons */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 150px 0;
+}
+
+.hero h1 {
+  font-size: 60px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #a0a0a0;
+  margin-bottom: 30px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
 .btn {
   display: inline-block;
   padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
   margin: 0 10px;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
-.btnPrimary {
+.btn-primary {
   background-color: #ffffff;
   color: #0f0f1a;
 }
 
-.btnSecondary {
+.btn-secondary {
   background-color: transparent;
   border: 1px solid #ffffff;
   color: #ffffff;
 }
 
-/* Footer Styling */
-.footerContent {
+/* Gradient Glow Text */
+.glow-container {
+  position: relative;
+  display: inline-block;
+  font-size: 60px;
+}
+
+.gradient-blur {
+  background: linear-gradient(to right, #FF00FF, #00FFFF, #FFFFFF, #8A2BE2);
+  filter: brightness(5) contrast(1.5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: blur(8px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.gradient-clear {
+  background: linear-gradient(to right, #BF40BF, #06b6d4, #CCCCFF, #5D3FD3);
+  filter: brightness(1.15);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.innovative-glow {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
+               0 0 10px rgba(255, 255, 255, 0.4), 
+               0 0 15px rgba(255, 255, 255, 0.3);
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                 0 0 10px rgba(255, 255, 255, 0.2),
+                 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                 0 0 20px rgba(255, 255, 255, 0.4),
+                 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Footer Styles */
+footer {
+  background-color: #000000;
+  padding: 40px;
+}
+
+.footer-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.footerColumn {
+.footer-column {
   display: flex;
   flex-direction: column;
 }
 
-.footerColumn h4 {
+.footer-column h4 {
   margin-bottom: 15px;
   font-size: 16px;
   font-weight: bold;
 }
 
-.footerColumn a {
+.footer-column a {
   color: #a0a0a0;
   text-decoration: none;
   margin-bottom: 8px;
+  transition: color 0.3s, transform 0.3s;
 }
 
-.footerColumn a:hover {
+.footer-column a:hover {
   color: #ffffff;
+  transform: translateX(5px);
 }
 
-/* Media Query for small devices */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  margin: 0 40px;
+}
+
 @media (max-width: 768px) {
-  .desktopNav {
-    display: none;
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
   }
   
-  .authButtons {
-    display: none;
-  }
-  
-  .mobileNav {
-    display: block;
+  .footer-bottom {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 }

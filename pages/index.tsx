@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import styles from '../styles/HomePage.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import LocomotiveScroll from 'locomotive-scroll';
 
 const HomePage = () => {
   useEffect(() => {
-    const LocomotiveScroll = require('locomotive-scroll').default;
     new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
@@ -12,92 +14,94 @@ const HomePage = () => {
   }, []);
 
   return (
-    <>
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Project Quest - Innovative Bots, Endless Possibilities</title>
-        <link
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.css"
-        />
-      </Head>
-
-      <div className={styles.container} data-scroll-container>
-        <header className={styles.header}>
-          <a href="/" className={styles.logoLink}>
-            <div className={styles.logoContainer}>
-              <img
-                src="/your-logo-url.png"
-                alt="Logo"
-                className={styles.logoImage}
-              />
-              <span className={styles.logo}>Project Quest</span>
-            </div>
-          </a>
-          <nav className={styles.desktopNav}>
-            <div className={styles.navItem}>
-              <a href="#" className={styles.navLink}>Applications</a>
-            </div>
-            <div className={styles.navItem}>
-              <a href="#" className={styles.navLink}>Stuff</a>
-            </div>
-          </nav>
-          <div className={styles.authButtons}>
-            <a href="#signin" className={styles.btnSignIn}>Discord</a>
-            <a href="#start" className={styles.btnStart}>Get Started</a>
+    <div data-scroll-container>
+      <header>
+        <a href="index.html" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="logo-container">
+            <img
+              src="https://media.discordapp.net/attachments/1035372833712386121/1288905349700649041/PNG_image_7.png?ex=67041126&is=6702bfa6&hm=0e89b1c85b1120b6d8cb4efdbddab4a3a93351b85e75f028bcaff4b6736ab7b2&=&format=webp&quality=lossless&width=711&height=711"
+              alt="Logo"
+            />
+            <span className="logo">Project Quest</span>
           </div>
-        </header>
+        </a>
+        <nav className="desktop-nav">
+          <div className="nav-item">
+            <a href="#" className="nav-link">
+              Applications <FontAwesomeIcon icon={faChevronDown} />
+            </a>
+          </div>
+          <div className="nav-item">
+            <a href="#" className="nav-link">
+              Stuff <FontAwesomeIcon icon={faChevronDown} />
+            </a>
+          </div>
+          <div className="nav-item">
+            <a href="#" className="nav-link">
+              Stuff <FontAwesomeIcon icon={faChevronDown} />
+            </a>
+          </div>
+          <div className="nav-item">
+            <a href="#" className="nav-link">Stuff</a>
+          </div>
+        </nav>
+        <div className="auth-buttons">
+          <a href="#signin" className="btn-signin">Discord</a>
+          <a href="#start" className="btn-start">Get Started</a>
+        </div>
+      </header>
 
+      <div className="container">
         <main>
-          <section className={styles.hero}>
+          <section className="hero">
             <h1>
-              <span className={styles.innovativeGlow}>Innovative</span> Bots, Endless
-              <span className={styles.glowContainer}>
-                <span className={styles.gradientBlur}>Possibilities</span>
-                <span className={styles.gradientClear}>Possibilities</span>
+              <span className="innovative-glow">Innovative</span> Bots, Endless
+              <span className="glow-container">
+                <span className="gradient-blur possibilities">Possibilities</span>
+                <span className="gradient-clear possibilities">Possibilities</span>
               </span>
             </h1>
-            <p>We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.</p>
-            <a href="#" className={styles.btnPrimary}>Get Started</a>
-            <a href="#" className={styles.btnSecondary}>Discord</a>
+            <p style={{ fontSize: '13.5px' }}>
+              We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.
+            </p>
+            <a href="#" className="btn btn-primary">Get Started</a>
+            <a href="#" className="btn btn-secondary">Discord</a>
           </section>
         </main>
-
-        <footer>
-          <div className={styles.footerContent}>
-            <div className={styles.footerColumn}>
-              <h4>Resources</h4>
-              <a href="#">Blog</a>
-              <a href="#">Documentation</a>
-              <a href="#">Developers</a>
-              <a href="#">Support</a>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Community</h4>
-              <a href="#">Discord Server</a>
-              <a href="#">System Status</a>
-              <a href="#">Become a Partner</a>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Applications</h4>
-              <a href="#">Toilet Paper</a>
-              <a href="#">Automater</a>
-              <a href="#">Game Arcade</a>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Legal</h4>
-              <a href="#">Terms of Service</a>
-              <a href="#">Privacy Policy</a>
-            </div>
-          </div>
-        </footer>
       </div>
-    </>
+
+      <footer>
+        <div className="footer-content">
+          <div className="footer-column">
+            <h4>Resources</h4>
+            <a href="#">Blog</a>
+            <a href="#">Documentation</a>
+            <a href="#">Developers</a>
+            <a href="#">Support</a>
+          </div>
+
+          <div className="footer-column">
+            <h4>Community</h4>
+            <a href="#">Discord Server</a>
+            <a href="#">System Status</a>
+            <a href="#">Become a Partner</a>
+          </div>
+
+          <div className="footer-column">
+            <h4>Applications</h4>
+            <a href="#">Toilet Paper</a>
+            <a href="#">Automater</a>
+            <a href="#">Game Arcade</a>
+          </div>
+
+          <div className="footer-column">
+            <h4>Legal</h4>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 };
 
