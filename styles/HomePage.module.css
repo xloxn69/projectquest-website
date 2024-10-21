@@ -132,3 +132,38 @@
 
 .footerColumn {
   display: flex;
+  flex-direction: column;
+}
+
+.footerColumn h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footerColumn a {
+  color: #a0a0a0;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.footerColumn a:hover {
+  color: #ffffff;
+}
+
+/* Media Query for small devices */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+  
+  .authButtons {
+    display: none;
+  }
+  
+  .mobileNav {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+  }
+}
