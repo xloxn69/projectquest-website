@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import localFont from "next/font/local";
+import styles from '../styles/HomePage.module.css';
 
 
 const geistSans = localFont({
