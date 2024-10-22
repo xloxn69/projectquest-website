@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Quest - Innovative Bots, Endless Possibilities</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.css">
+    
+    <style>
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            min-height: 20vh;
+            position: relative;
+            background-image: 
+                radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%),
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 100% 100%, 50px 50px, 50px 50px;
+            background-position: center center, top left, top left;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+
+
+/* Ensure content is above the overlay */
+.container, header, footer {
+    position: relative;
+    z-index: 2;
+    
+}
+
+footer {
+    background-color: #000000; /* Solid black background for footer */
+}
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            position: fixed; /* Keep the header fixed at the top */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000; /* Ensure it is above other content */
+            background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent background */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            transition: background-color 0.3s ease;
+            padding: 10px 5%; /* Add horizontal padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Add padding to the body to prevent content from being hidden behind the fixed header */
+        body {
+            padding-top: 70px; /* Adjust this value based on the height of your header */
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .desktop-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .dropdown-toggle::after {
+            content: '\f078';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-left: 5px;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9); /* Fallback for browsers without backdrop-filter support */
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 16px;
+            min-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: display 0.3s ease;
+            transform-origin: top center;
+            transform: scaleY(0);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: flex;
+            transition: display 0.3s ease;
+            transform: scaleY(1);
+            opacity: 1;
+        }
+
+        .dropdown-menu:hover {
+            display: flex;
+        }
+
+        .dropdown-column {
+            flex: 1;
+            padding: 0 16px;
+        }
+
+        .dropdown-column h3 {
+            font-size: 14px;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.2s;
+            border-radius: 4px;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #ffffff; /* Ensure text color is white on hover */
+        }
+
+        .dropdown-item i {
+            font-size: 20px;
+            margin-right: 12px;
+            color: #888;
+        }
+
+        .dropdown-item h4 {
+            font-size: 16px;
+            margin: 0 0 4px 0;
+        }
+
+        .dropdown-item p {
+            font-size: 14px;
+            color: #888;
+            margin: 0;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-signin, .btn-start {
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn-signin {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-start {
+            background-color: white;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .auth-buttons .btn-signin {
+                display: none;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 8px;
+            min-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #222;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: -200%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(3, 3, 3, 0.95);
+            backdrop-filter: blur(6px);
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            padding-top: 10px;
+            transition: top 0.3s ease-in-out;
+        }
+
+        .mobile-nav.active {
+            top: 0;
+        }
+
+        .mobile-nav a, .mobile-nav .dropdown > span {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 15px 20px;
+            border-bottom: 1px solid #2a2a2a;
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-nav .dropdown-content {
+            display: none;
+            background-color: #2a2a2a;
+        }
+
+        .mobile-nav .dropdown-content.active {
+            display: block;
+        }
+
+        .mobile-nav .dropdown-content a {
+            padding-left: 40px;
+        }
+
+        /* Dark/Light mode toggle */
+        .toggle-mode {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .toggle-mode i {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Styling for the sign in and start buttons */
+        .mobile-nav .btn-container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .mobile-nav .btn-signin, .mobile-nav .btn-start {
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .mobile-nav .btn-signin {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+
+        .mobile-nav .btn-start {
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .hero h1 {
+            font-size: 60px; /* Increased from 40px */
+            line-height: 1.2;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #a0a0a0;
+            margin-bottom: 30px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 0 10px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn-primary {
+            background-color: #ffffff;
+            color: #0f0f1a;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+        }
+
+        /* Container to hold both layers */
+        .glow-container {
+    position: relative;
+    display: inline-block;
+    font-size: 60px; /* Match the h1 font size */
+}
+
+/* The blurred text layer with gradient */
+.gradient-blur {
+    background: linear-gradient(to right, #FF00FF, #00FFFF, #FFFFFF, #8A2BE2);
+    filter: brightness(5) contrast(1.5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: blur(8px); /* Increased blur to match larger text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* The regular text layer with the same gradient */
+.gradient-clear {
+    background: linear-gradient(to right, #BF40BF, #06b6d4, #CCCCFF, #5D3FD3);
+    filter: brightness(1.15);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 2;
+}
+    
+    .innovative-glow {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
+                 0 0 10px rgba(255, 255, 255, 0.4), 
+                 0 0 15px rgba(255, 255, 255, 0.3);
+    animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    from {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                     0 0 10px rgba(255, 255, 255, 0.2),
+                     0 0 15px rgba(255, 255, 255, 0.1);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                     0 0 20px rgba(255, 255, 255, 0.4),
+                     0 0 30px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Footer Content Layout */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+    gap: 30px; /* Spacing between columns */
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Footer column styling */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-column a {
+    color: #a0a0a0;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-column a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+/* Dark/Light Mode Switch Container */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    margin: 0 40px; /* Align footer bottom with content */
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr); /* Two columns per row on small screens */
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body data-scroll-container>
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <div class="logo-container">
+                <img src="https://media.discordapp.net/attachments/1035372833712386121/1288905349700649041/PNG_image_7.png?ex=67041126&is=6702bfa6&hm=0e89b1c85b1120b6d8cb4efdbddab4a3a93351b85e75f028bcaff4b6736ab7b2&=&format=webp&quality=lossless&width=711&height=711" alt="Logo">
+                <span class="logo">Project Quest</span>
+            </div>
+        </a>
+        <nav class="desktop-nav">
+            <div class="nav-item">
+                <a href="#" class="nav-link">Applications <i class="fas fa-chevron-down"></i></a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Stuff <i class="fas fa-chevron-down"></i></a>
+                
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Stuff <i class="fas fa-chevron-down"></i></a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Stuff</a>
+            </div>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#signin" class="btn-signin">Discord</a>
+            <a href="#start" class="btn-start">Get Started</a>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <main>
+            <section class="hero">
+               <h1><span class="innovative-glow">Innovative</span> Bots, Endless
+  <span class="glow-container">
+    <!-- Layer 1: Gradient Blur -->
+    <span class="gradient-blur possibilities">Possibilities</span>
+    
+    <!-- Layer 2: Regular Gradient Text -->
+    <span class="gradient-clear possibilities">Possibilities</span>
+  </span>
+</h1>
+                <p style="font-size: 13.5px;">We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.</p>
+                <a href="#" class="btn btn-primary">Get Started</a>
+                <a href="#" class="btn btn-secondary">Discord</a>
+
+                <div class="fade-overlay"></div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <a href="#">Blog</a>
+                <a href="#">Documentation</a>
+                <a href="#">Developers</a>
+                <a href="#">Support</a>
+                
+                
+            </div>
+            
+            <div class="footer-column">
+                <h4>Community</h4>
+                <a href="#">Discord Server</a>
+                <a href="#">System Status</a>
+                <a href="#">Become a Partner</a>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Applications</h4>
+                <a href="#">Toilet Paper</a>
+                <a href="#">Automater</a>
+                <a href="#">Game Arcade</a>
+            </div>
+            
+            
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            
+        </div>
+
+      
+    </footer>
+    
+    
+
+    <script src="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+    <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector("[data-scroll-container]"),
+            smooth: true
+        });
+    </script>
+
+    
+</body>
+</html>
