@@ -14,7 +14,7 @@
     radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%),
     linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
     linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 100% 100%, 20px 20px, 20px 20px;
+  background-size: 100% 100%, 40px 40px, 40px 40px;
   background-position: center center, top left, top left;
   background-attachment: fixed;
 }
@@ -105,6 +105,14 @@
   line-height: 1.2;
   margin-bottom: 20px;
   animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 40px; /* Reduce by 10px for mobile devices */
+  }
 }
 
 .heroText {
