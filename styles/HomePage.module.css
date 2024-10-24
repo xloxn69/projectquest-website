@@ -117,11 +117,11 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .noWrap {
-    font-size: 40px; /* Reduce font size of "Bots, Endless" on mobile */
+    font-size: 55px; /* Reduce font size of "Bots, Endless" on mobile */
   }
 
   .hero h1 {
-    font-size: 60px; /* Keep the size of other text the same */
+    font-size: 55px; /* Keep the size of other text the same */
     line-height: 1.2;
   }
 }
