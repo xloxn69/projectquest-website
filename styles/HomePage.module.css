@@ -107,13 +107,16 @@
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
-
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 50px; /* Reduce by 10px for mobile devices */
+    font-size: 40px; /* Reduce font size */
+    line-height: 1.1; /* Adjust line height to bring words closer */
+    white-space: nowrap; /* Prevent line break between "Bots, Endless" */
   }
 }
+
+
 
 .heroText {
   font-size: 13.5px;
@@ -176,11 +179,6 @@
   z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .gradientClear {
-    font-size: 50px; /* Reduce "Possibilities" by 10px for mobile */
-  }
-}
 
 .innovativeGlow {
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
