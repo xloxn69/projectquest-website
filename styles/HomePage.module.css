@@ -28,7 +28,7 @@
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease;
-  padding: 10px 5%;
+  padding: 15px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,7 +111,7 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 40px; /* Reduce by 10px for mobile devices */
+    font-size: 50px; /* Reduce by 10px for mobile devices */
   }
 }
 
@@ -174,6 +174,12 @@
   -webkit-text-fill-color: transparent;
   position: relative;
   z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .gradientClear {
+    font-size: 50px; /* Reduce "Possibilities" by 10px for mobile */
+  }
 }
 
 .innovativeGlow {
