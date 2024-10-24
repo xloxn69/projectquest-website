@@ -202,14 +202,15 @@
 }
 
 
-.line2, .glowContainer {
-  display: inline;
+/* Ensure "Bots, Endless" stays on the same line */
+.noWrap {
+  white-space: nowrap;
 }
 
-/* Mobile adjustments */
+/* Mobile specific changes to ensure line breaks only on mobile */
 @media (max-width: 768px) {
-  .hero h1 {
-    white-space: nowrap; /* Prevent line break for "Bots, Endless" */
+  .innovativeGlow, .glowContainer {
+    display: block; /* This forces "Innovative" and "Possibilities" to be on their own lines */
   }
 }
 

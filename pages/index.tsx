@@ -52,8 +52,8 @@ export default function HomePage() {
       <main>
         <section className={styles.hero}>
           <h1>
-      <span className={styles.innovativeGlow}>Innovative</span>
-      Bots, Endless 
+      <span className={styles.innovativeGlow}>Innovative</span> <br /> 
+      <span className={styles.noWrap}>Bots, Endless</span> <br />
       <span className={styles.glowContainer}>
         <span className={styles.gradientBlur}>Possibilities</span>
         <span className={styles.gradientClear}>Possibilities</span>
