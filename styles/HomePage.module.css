@@ -108,10 +108,10 @@
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
-
 /* Ensure "Bots, Endless" stays on the same line */
 .noWrap {
-  white-space: nowrap;
+  white-space: nowrap; /* This will prevent line breaks */
+  font-size: 60px;      /* Make sure the font size matches the rest */
 }
 
 /* Mobile adjustments */
