@@ -50,20 +50,22 @@ export default function HomePage() {
       </header>
 
       <main>
-        <section className={styles.hero}>
-          <h1>
-      <span className={styles.innovativeGlow}>Innovative</span> <br /> 
-      <span className={styles.noWrap}>Bots, Endless</span> <br />
+  <section className={styles.hero}>
+    <h1>
+      <span className={styles.innovativeGlow}>Innovative</span> <br className={styles.mobileOnly} /> 
+      <span className={styles.noWrap}>Bots, Endless</span> <br className={styles.mobileOnly} />
       <span className={styles.glowContainer}>
         <span className={styles.gradientBlur}>Possibilities</span>
         <span className={styles.gradientClear}>Possibilities</span>
       </span>
     </h1>
-          <p className={styles.heroText}>We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.</p>
-          <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get Started</a>
-          <a href="#" className={`${styles.btn} ${styles.btnSecondary}`}>Discord</a>
-        </section>
-      </main>
+    <p className={styles.heroText}>
+      We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.
+    </p>
+    <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get Started</a>
+    <a href="#" className={`${styles.btn} ${styles.btnSecondary}`}>Discord</a>
+  </section>
+</main>
 
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
