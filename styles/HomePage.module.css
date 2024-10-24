@@ -102,25 +102,11 @@
 
 .hero h1 {
   font-size: 60px;
+  text-align: center;
   line-height: 1.2;
   margin-bottom: 20px;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
-
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 40px; /* Adjust the font size for mobile */
-  }
-
-  .hero h1::after {
-    content: "Bots, Endless \A Possibilities";
-    white-space: pre; /* Ensures line breaks are respected */
-  }
-}
-
-
 
 .heroText {
   font-size: 13.5px;
@@ -212,6 +198,28 @@
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
                  0 0 20px rgba(255, 255, 255, 0.4),
                  0 0 30px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.line2, .glowContainer {
+  display: inline;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .line2 {
+    display: block; /* Force line break after "Innovative" */
+    margin-top: 10px;
+  }
+
+  .glowContainer {
+    display: block; /* Force line break after "Bots, Endless" */
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 40px; /* Adjust font size for mobile */
+    line-height: 1.3;
   }
 }
 

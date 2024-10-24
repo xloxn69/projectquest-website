@@ -52,11 +52,12 @@ export default function HomePage() {
       <main>
         <section className={styles.hero}>
           <h1>
-            <span className={styles.innovativeGlow}>Innovative</span> Bots, Endless
-            <span className={styles.glowContainer}>
-              <span className={styles.gradientBlur}>Possibilities</span>
-              <span className={styles.gradientClear}>Possibilities</span>
-            </span>
+            <span className={styles.innovativeGlow}>Innovative</span>
+      <span className={styles.line2}> Bots, Endless</span> 
+      <span className={styles.glowContainer}>
+        <span className={styles.gradientBlur}>Possibilities</span>
+        <span className={styles.gradientClear}>Possibilities</span>
+      </span>
           </h1>
           <p className={styles.heroText}>We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.</p>
           <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get Started</a>
