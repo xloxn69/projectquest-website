@@ -108,6 +108,24 @@
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
+
+/* Ensure "Bots, Endless" stays on the same line */
+.noWrap {
+  white-space: nowrap;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .noWrap {
+    font-size: 40px; /* Reduce font size of "Bots, Endless" on mobile */
+  }
+
+  .hero h1 {
+    font-size: 60px; /* Keep the size of other text the same */
+    line-height: 1.2;
+  }
+}
+
 .heroText {
   font-size: 13.5px;
   color: #a0a0a0;
@@ -201,18 +219,6 @@
   }
 }
 
-
-/* Ensure "Bots, Endless" stays on the same line */
-.noWrap {
-  white-space: nowrap;
-}
-
-/* Mobile specific changes to ensure line breaks only on mobile */
-@media (max-width: 768px) {
-  .innovativeGlow, .glowContainer {
-    display: block; /* This forces "Innovative" and "Possibilities" to be on their own lines */
-  }
-}
 
 .footer {
   background-color: #000000;
