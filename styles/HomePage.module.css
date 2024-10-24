@@ -110,19 +110,22 @@
 
 /* Ensure "Bots, Endless" stays on the same line */
 .noWrap {
-  white-space: nowrap; /* This will prevent line breaks */
-  font-size: 60px;      /* Make sure the font size matches the rest */
+  white-space: nowrap; /* Prevent line breaks for "Bots, Endless" on desktop */
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .noWrap {
-    font-size: 51px; /* Reduce font size of "Bots, Endless" on mobile */
+  /* Force line breaks on mobile */
+  .hero h1 {
+    font-size: 55px;
+    line-height: 1.2;
   }
 
-  .hero h1 {
-    font-size: 55px; /* Keep the size of other text the same */
-    line-height: 1.2;
+  /* Force "Bots, Endless" on a new line */
+  .noWrap {
+    display: block;  /* This makes "Bots, Endless" break into a new line on mobile */
+    font-size: 51px; /* Slightly smaller font for mobile */
+    white-space: normal; /* Allow it to wrap on mobile */
   }
 }
 
