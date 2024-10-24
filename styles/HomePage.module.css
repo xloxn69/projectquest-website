@@ -107,12 +107,16 @@
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 40px; /* Reduce font size */
-    line-height: 1.1; /* Adjust line height to bring words closer */
-    white-space: nowrap; /* Prevent line break between "Bots, Endless" */
+    font-size: 40px; /* Adjust the font size for mobile */
+  }
+
+  .hero h1::after {
+    content: "Bots, Endless \A Possibilities";
+    white-space: pre; /* Ensures line breaks are respected */
   }
 }
 
