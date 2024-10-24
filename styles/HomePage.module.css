@@ -53,7 +53,7 @@
 
 .desktopNav {
   display: flex;
-  gap: 5px;
+  gap: 20px;
 }
 
 .navItem {
@@ -97,7 +97,7 @@
 
 .hero {
   text-align: center;
-  padding: 150px 0;
+  padding: 50px 0;
 }
 
 .hero h1 {
