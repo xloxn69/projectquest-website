@@ -22,7 +22,7 @@ export default function HomePage() {
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
         <Link href="/" className={styles.logoContainer}>
           <Image
-            src="https://media.discordapp.net/attachments/1035372833712386121/1288905349700649041/PNG_image_7.png?ex=67041126&is=6702bfa6&hm=0e89b1c85b1120b6d8cb4efdbddab4a3a93351b85e75f028bcaff4b6736ab7b2&=&format=webp&quality=lossless&width=711&height=711"
+            src="/logo.png"
             alt="Logo"
             width={30}
             height={30}
