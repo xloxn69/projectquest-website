@@ -50,9 +50,12 @@ export default function HomePage() {
           <a href="#signin" className={styles.btnSignin}>Discord</a>
           <a href="#start" className={styles.btnStart}>Get Started</a>
         </div>
-        <button onClick={toggleMobileNav} className={styles.mobileMenuButton}>
-          <Menu size={24} />
-        </button>
+        <div className={styles.mobileButtons}>
+          <a href="#start" className={styles.btnStart}>Get Started</a>
+          <button onClick={toggleMobileNav} className={styles.mobileMenuButton}>
+            <Menu size={24} />
+          </button>
+        </div>
       </header>
 
       <MobileNav isOpen={isMobileNavOpen} onClose={() => setIsMobileNavOpen(false)} />
