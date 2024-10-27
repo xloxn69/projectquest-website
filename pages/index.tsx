@@ -1,12 +1,13 @@
-
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from '../styles/HomePage.module.css';
-
+import { Menu } from 'lucide-react'
+import MobileNav from '../components/MobileNav'
+import styles from '../styles/HomePage.module.css'
 
 export default function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,8 @@ export default function HomePage() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const toggleMobileNav = () => setIsMobileNavOpen(!isMobileNavOpen)
 
   return (
     <div className={styles.container}>
@@ -47,25 +50,30 @@ export default function HomePage() {
           <a href="#signin" className={styles.btnSignin}>Discord</a>
           <a href="#start" className={styles.btnStart}>Get Started</a>
         </div>
+        <button onClick={toggleMobileNav} className={styles.mobileMenuButton}>
+          <Menu size={24} />
+        </button>
       </header>
 
+      <MobileNav isOpen={isMobileNavOpen} onClose={() => setIsMobileNavOpen(false)} />
+
       <main>
-  <section className={styles.hero}>
-    <h1>
-      <span className={styles.innovativeGlow}>Innovative</span> <br className={styles.mobileOnly} /> 
-      <span className={styles.noWrap}>Bots, Endless</span> <br className={styles.mobileOnly} />
-      <span className={styles.glowContainer}>
-        <span className={styles.gradientBlur}>Possibilities</span>
-        <span className={styles.gradientClear}>Possibilities</span>
-      </span>
-    </h1>
-    <p className={styles.heroText}>
-      We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.
-    </p>
-    <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get Started</a>
-    <a href="#" className={`${styles.btn} ${styles.btnSecondary}`}>Discord</a>
-  </section>
-</main>
+        <section className={styles.hero}>
+          <h1>
+            <span className={styles.innovativeGlow}>Innovative</span> <br className={styles.mobileOnly} /> 
+            <span className={styles.noWrap}>Bots, Endless</span> <br className={styles.mobileOnly} />
+            <span className={styles.glowContainer}>
+              <span className={styles.gradientBlur}>Possibilities</span>
+              <span className={styles.gradientClear}>Possibilities</span>
+            </span>
+          </h1>
+          <p className={styles.heroText}>
+            We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.
+          </p>
+          <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get Started</a>
+          <a href="#" className={`${styles.btn} ${styles.btnSecondary}`}>Discord</a>
+        </section>
+      </main>
 
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
