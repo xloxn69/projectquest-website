@@ -1,17 +1,17 @@
 .mobileNav {
   position: fixed;
   top: 0;
+  left: 0;
   right: 0;
-  bottom: 0;
-  width: 40%;
+  height: 0;
   background-color: #000;
   z-index: 1000;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
 }
 
 .open {
-  transform: translateX(0);
+  height: 100vh;
 }
 
 .mobileNavContent {
@@ -29,6 +29,8 @@
 }
 
 .mobileNavLogo {
+  display: flex;
+  align-items: center;
   font-size: 24px;
   font-weight: bold;
   color: #fff;
@@ -36,10 +38,12 @@
 }
 
 .closeButton {
-  background: none;
+  background-color: #333;
   border: none;
   color: #fff;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 .mobileNavMenu {
@@ -80,16 +84,4 @@
 .mobileNavButtonOutline {
   background-color: transparent;
   border: 1px solid #fff;
-}
-
-@media (max-width: 768px) {
-  .mobileNav {
-    width: 70%;
-  }
-}
-
-@media (max-width: 480px) {
-  .mobileNav {
-    width: 80%;
-  }
 }
