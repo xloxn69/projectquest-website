@@ -287,6 +287,13 @@
   }
 }
 
+/* Add this to hide Get Started on mobile */
+@media (max-width: 768px) {
+  .mobileButtons .btnStart {
+    display: none;
+  }
+}
+
 .mobileMenuButton {
   background: none;
   border: none;
