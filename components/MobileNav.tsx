@@ -18,11 +18,16 @@ export default function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClos
         </div>
         <nav className={styles.mobileNavMenu}>
           <ul>
-            <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Stuff</Link></li>
-            <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Stuff</Link></li>
-            <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Stuff</Link></li>
+            <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Product</Link></li>
+            <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Resources</Link></li>
+            <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Docs</Link></li>
+            <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Pricing</Link></li>
           </ul>
         </nav>
+        <div className={styles.authButtons}>
+          <a href="#signin" className={styles.btnSignin}>Sign in</a>
+          <a href="#demo" className={styles.btnDemo}>Book a demo</a>
+        </div>
       </div>
     </div>
   )
