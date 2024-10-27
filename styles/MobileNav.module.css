@@ -11,7 +11,7 @@
 }
 
 .open {
-  height: 100vh;
+  height: 50vh;
 }
 
 .mobileNavContent {
@@ -34,6 +34,7 @@
   font-size: 24px;
   font-weight: bold;
   color: #fff;
+  text-decoration: none;
 }
 
 .mobileNavLogo span {
@@ -41,12 +42,11 @@
 }
 
 .closeButton {
-  background-color: #333;
+  background: none;
   border: none;
   color: #fff;
   cursor: pointer;
   padding: 8px;
-  border-radius: 4px;
 }
 
 .mobileNavMenu {
@@ -65,21 +65,4 @@
   font-size: 24px;
   padding: 15px 0;
   text-decoration: none;
-}
-
-.mobileNavButtons {
-  margin-top: auto;
-}
-
-.mobileNavButton {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  background-color: transparent;
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 20px;
-  font-size: 16px;
-  cursor: pointer;
 }

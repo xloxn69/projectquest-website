@@ -8,10 +8,10 @@ export default function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClos
     <div className={`${styles.mobileNav} ${isOpen ? styles.open : ''}`}>
       <div className={styles.mobileNavContent}>
         <div className={styles.mobileNavHeader}>
-          <div className={styles.mobileNavLogo}>
+          <Link href="/" className={styles.mobileNavLogo}>
             <Image src="/logo.png" alt="Logo" width={30} height={30} />
             <span>Project Quest</span>
-          </div>
+          </Link>
           <button onClick={onClose} className={styles.closeButton} aria-label="Close menu">
             <X size={24} />
           </button>
@@ -23,9 +23,6 @@ export default function MobileNav({ isOpen, onClose }: { isOpen: boolean; onClos
             <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Stuff</Link></li>
           </ul>
         </nav>
-        <div className={styles.mobileNavButtons}>
-          <button className={styles.mobileNavButton}>Discord</button>
-        </div>
       </div>
     </div>
   )
