@@ -287,8 +287,9 @@
   }
 }
 
-/* Add this to hide Get Started on mobile */
+/* Hide Get Started button on mobile screens */
 @media (max-width: 768px) {
+  .authButtons .btnStart,
   .mobileButtons .btnStart {
     display: none;
   }
