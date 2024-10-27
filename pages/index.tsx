@@ -51,7 +51,6 @@ export default function HomePage() {
           <a href="#start" className={styles.btnStart}>Get Started</a>
         </div>
         <div className={styles.mobileButtons}>
-          <a href="#start" className={styles.btnStart}>Get Started</a>
           <button onClick={toggleMobileNav} className={styles.mobileMenuButton}>
             <Menu size={24} />
           </button>
