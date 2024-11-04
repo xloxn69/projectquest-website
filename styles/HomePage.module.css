@@ -1,5 +1,3 @@
-
-
 .container {
   width: 100%;
   min-height: 100vh;
@@ -296,12 +294,18 @@
 }
 
 .mobileMenuButton {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding: 8px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileMenuButton {
+    display: flex;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    align-items: center;
+    padding: 8px;
+  }
 }
 
