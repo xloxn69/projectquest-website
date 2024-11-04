@@ -35,15 +35,15 @@ export default function MobileNav({ isOpen, onClose, onOpen }: {
           </div>
           <nav className={styles.mobileNavMenu}>
             <ul>
-              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Product</Link></li>
-              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Resources</Link></li>
-              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Docs</Link></li>
-              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Pricing</Link></li>
+              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Applications</Link></li>
+              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Stuff</Link></li>
+              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Stuff</Link></li>
+              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Stuff</Link></li>
             </ul>
           </nav>
           <div className={styles.authButtons}>
-            <a href="#signin" className={styles.btnSignin}>Sign in</a>
-            <a href="#demo" className={styles.btnDemo}>Book a demo</a>
+            <a href="#signin" className={styles.btnSignin}>Discord</a>
+            <a href="#getstarted" className={styles.btnDemo}>Get started</a>
           </div>
         </div>
       </div>
