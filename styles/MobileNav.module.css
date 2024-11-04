@@ -3,13 +3,14 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 100vh;
+  height: 40vh;
   background-color: #000;
   z-index: 1000;
   transform: translateY(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .open {
@@ -17,7 +18,7 @@
 }
 
 .mobileNavContent {
-  padding: 20px;
+  padding: 20px 24px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -27,35 +28,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
-}
-
-.mobileNavMenu {
-  margin-top: 20px;
-}
-
-.mobileNavMenu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mobileNavLink {
-  display: block;
-  font-size: 24px;
-  color: #fff;
-  text-decoration: none;
-  padding: 15px 0;
+  padding-bottom: 32px;
 }
 
 .mobileNavLogo {
   display: flex;
   align-items: center;
-  font-size: 24px;
-  font-weight: bold;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 500;
   color: #fff;
   text-decoration: none;
-  margin-left: auto;
 }
 
 .closeButton {
@@ -64,26 +47,60 @@
   color: #fff;
   cursor: pointer;
   padding: 8px;
+  opacity: 0.7;
+}
+
+.mobileNavMenu {
+  flex: 1;
+}
+
+.mobileNavMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobileNavLink {
+  display: block;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.mobileNavLink:hover {
+  color: #fff;
 }
 
 .authButtons {
+  margin-top: auto;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 12px;
+  padding-top: 32px;
 }
 
 .btnSignin, .btnDemo {
-  padding: 10px 20px;
-  border-radius: 4px;
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 6px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .btnSignin {
-  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
+}
+
+.btnSignin:hover {
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .btnDemo {
@@ -91,6 +108,11 @@
   color: black;
 }
 
+.btnDemo:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hide hamburger by default */
 .hamburger {
   display: none;
 }
