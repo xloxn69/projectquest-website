@@ -20,6 +20,8 @@ export default function MobileNav({ isOpen, onClose, onOpen }: {
         <span></span>
       </button>
 
+      <div className={`${styles.backdrop} ${isOpen ? styles.backdropOpen : ''}`} onClick={onClose} />
+
       <div className={`${styles.mobileNav} ${isOpen ? styles.open : ''}`}>
         <div className={styles.mobileNavContent}>
           <div className={styles.mobileNavHeader}>
