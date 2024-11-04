@@ -317,3 +317,17 @@
   }
 }
 
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px; /* Reduced padding on mobile */
+  }
+
+  .logo {
+    font-size: 24px; /* Reduced logo size on mobile */
+  }
+
+  .mobileMenuButton {
+    margin-left: 8px; /* Add some space from the edge */
+  }
+}
+
