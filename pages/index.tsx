@@ -73,8 +73,10 @@ export default function HomePage() {
           <p className={styles.heroText}>
             We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.
           </p>
-          <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get Started</a>
-          <a href="#" className={`${styles.btn} ${styles.btnSecondary}`}>Discord</a>
+          <div className={styles.heroButtons}>
+            <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get Started</a>
+            <a href="#" className={`${styles.btn} ${styles.btnSecondary}`}>Discord</a>
+          </div>
         </section>
       </main>
 
