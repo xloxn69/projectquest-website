@@ -24,7 +24,11 @@ export default function AutomaterPage() {
         {/* Same header as HomePage */}
       </header>
 
-      <MobileNav isOpen={isMobileNavOpen} onClose={() => setIsMobileNavOpen(false)} />
+      <MobileNav 
+        isOpen={isMobileNavOpen} 
+        onClose={() => setIsMobileNavOpen(false)}
+        onOpen={() => setIsMobileNavOpen(true)}
+      />
 
       <main className={styles.main}>
         <section className={styles.hero}>

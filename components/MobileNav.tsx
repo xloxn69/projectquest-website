@@ -6,11 +6,15 @@ import styles from '../styles/MobileNav.module.css'
 export default function MobileNav({ isOpen, onClose, onOpen }: { 
   isOpen: boolean; 
   onClose: () => void;
-  onOpen: () => void;
+  onOpen?: () => void;
 }) {
   return (
     <>
-      <button className={styles.hamburger} onClick={onOpen} aria-label="Open menu">
+      <button 
+        className={styles.hamburger} 
+        onClick={onOpen || (() => {})} 
+        aria-label="Open menu"
+      >
         <span></span>
         <span></span>
         <span></span>
