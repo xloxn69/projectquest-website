@@ -20,6 +20,7 @@ export default function HomePage() {
 
   const toggleMobileNav = () => setIsMobileNavOpen(!isMobileNavOpen)
 
+  
   return (
     <div className={styles.container}>
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
