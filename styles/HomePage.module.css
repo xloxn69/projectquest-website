@@ -22,7 +22,7 @@
   right: 0;
   bottom: 0;
   background-image: none;
-  background-size: 30px 30px;
+  background-size: 50px 50px;
   background-position: -0.5px -0.5px;
   filter: blur(0.5px);
   pointer-events: none;
@@ -606,7 +606,7 @@
       ),
       linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), 
       linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 100% 100%, 30px 30px, 30px 30px;
+    background-size: 100% 100%, 50px 50px, 50px 50px;
     background-position: center center, top left, top left;
     background-attachment: fixed;
     opacity: 1;
