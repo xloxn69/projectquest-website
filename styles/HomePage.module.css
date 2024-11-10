@@ -12,11 +12,33 @@
   flex-direction: column;
   background-image: 
     radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%),
-    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
   background-size: 100% 100%, 40px 40px, 40px 40px;
   background-position: center center, top left, top left;
   background-attachment: fixed;
+}
+
+.container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: -0.5px -0.5px;
+  filter: blur(0.5px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero, .header, .footer, .desktopNav, .authButtons, .mobileButtons {
+  position: relative;
+  z-index: 2;
 }
 
 .header {
