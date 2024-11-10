@@ -22,11 +22,16 @@
   background-size: 100% 100%, 40px 40px, 40px 40px;
   background-position: center center, top left, top left;
   background-attachment: fixed;
-  transition: filter 0.2s ease;
+  transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container.hasOpenDropdown {
   filter: blur(1px);
+}
+
+.container.hasOpenDropdown > *:not(.header) {
+  filter: blur(2px);
+  transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container::before {
@@ -54,7 +59,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1001;
   background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -405,10 +410,10 @@
   min-width: 320px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-  filter: blur(0);
+  z-index: 1000;
 }
 
 .navItem:hover .navDropdown {
