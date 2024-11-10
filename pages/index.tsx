@@ -43,18 +43,9 @@ export default function HomePage() {
               <ChevronDown size={16} className={styles.navArrow} />
             </a>
             <div className={styles.navDropdown}>
-              <div className={styles.dropdownSection}>
-                <div className={styles.dropdownCategory}>Server Management</div>
-                <Link href="/toiletpaper" className={styles.dropdownItem}>
-                  <div className={styles.dropdownContent}>
-                    <div className={styles.dropdownTitle}>Toilet Paper</div>
-                    <div className={styles.dropdownDescription}>Server Management Solution</div>
-                  </div>
-                </Link>
-              </div>
               
               <div className={styles.dropdownSection}>
-                <div className={styles.dropdownCategory}>Automation</div>
+                <div className={styles.dropdownCategory}>Server Management</div>
                 <Link href="/automater" className={styles.dropdownItem}>
                   <div className={styles.dropdownContent}>
                     <div className={styles.dropdownTitle}>Automater</div>
@@ -69,6 +60,12 @@ export default function HomePage() {
                   <div className={styles.dropdownContent}>
                     <div className={styles.dropdownTitle}>Game Arcade</div>
                     <div className={styles.dropdownDescription}>Add Fun and Games to Your Server</div>
+                  </div>
+                </Link>
+                <Link href="/toiletpaper" className={styles.dropdownItem}>
+                  <div className={styles.dropdownContent}>
+                    <div className={styles.dropdownTitle}>Toilet Paper</div>
+                    <div className={styles.dropdownDescription}>Server Management Solution</div>
                   </div>
                 </Link>
               </div>
