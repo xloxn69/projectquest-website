@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Menu } from 'lucide-react'
 import MobileNav from '../components/MobileNav'
 import styles from '../styles/HomePage.module.css'
+import Head from 'next/head'
 
 export default function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -23,6 +24,9 @@ export default function HomePage() {
   
   return (
     <div className={styles.container}>
+      <Head>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.490/build/spline-viewer.js"></script>
+      </Head>
       <div className={styles.splineContainer}>
         <spline-viewer url="https://prod.spline.design/QvjkxNYSMFn5ZTHX/scene.splinecode"></spline-viewer>
       </div>
