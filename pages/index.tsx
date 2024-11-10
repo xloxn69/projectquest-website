@@ -8,7 +8,6 @@ import styles from '../styles/HomePage.module.css'
 export default function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +22,7 @@ export default function HomePage() {
 
   
   return (
-    <div className={`${styles.container} ${isDropdownOpen ? styles.hasOpenDropdown : ''}`}>
+    <div className={styles.container}>
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
         <Link href="/" className={styles.logoContainer}>
           <Image
@@ -38,9 +37,7 @@ export default function HomePage() {
           <div className={styles.navItem}>
             <a href="#" className={styles.navLink}>Product</a>
           </div>
-          <div className={styles.navItem}
-               onMouseEnter={() => setIsDropdownOpen(true)}
-               onMouseLeave={() => setIsDropdownOpen(false)}>
+          <div className={styles.navItem}>
             <a href="#" className={styles.navLink}>
               Applications
               <ChevronDown size={16} className={styles.navArrow} />
