@@ -12,11 +12,12 @@
   flex-direction: column;
   background-image: 
     radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%),
-    linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px), 
-    linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 100% 100%, 40px 40px, 40px 40px;
   background-position: center center, top left, top left;
   background-attachment: fixed;
+  filter: blur(0.2px);
 }
 
 .container::before {
