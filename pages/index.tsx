@@ -35,7 +35,27 @@ export default function HomePage() {
         </Link>
         <nav className={styles.desktopNav}>
           <div className={styles.navItem}>
-            <a href="#" className={styles.navLink}>Applications <i className="fas fa-chevron-down"></i></a>
+            <a href="#" className={styles.navLink}>Applications</a>
+            <div className={styles.navDropdown}>
+              <Link href="/applications/toilet-paper" className={styles.dropdownItem}>
+                <div className={styles.dropdownContent}>
+                  <div className={styles.dropdownTitle}>Toilet Paper</div>
+                  <div className={styles.dropdownDescription}>The Ultimate Server Management Solution</div>
+                </div>
+              </Link>
+              <Link href="/applications/automater" className={styles.dropdownItem}>
+                <div className={styles.dropdownContent}>
+                  <div className={styles.dropdownTitle}>Automater</div>
+                  <div className={styles.dropdownDescription}>Automate Your Discord Server Tasks</div>
+                </div>
+              </Link>
+              <Link href="/applications/game-arcade" className={styles.dropdownItem}>
+                <div className={styles.dropdownContent}>
+                  <div className={styles.dropdownTitle}>Game Arcade</div>
+                  <div className={styles.dropdownDescription}>Add Fun and Games to Your Server</div>
+                </div>
+              </Link>
+            </div>
           </div>
           <div className={styles.navItem}>
             <a href="#" className={styles.navLink}>Stuff <i className="fas fa-chevron-down"></i></a>
