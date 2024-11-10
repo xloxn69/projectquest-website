@@ -45,7 +45,7 @@ export default function HomePage() {
             <div className={styles.navDropdown}>
               <div className={styles.dropdownSection}>
                 <div className={styles.dropdownCategory}>Server Management</div>
-                <Link href="/applications/toilet-paper" className={styles.dropdownItem}>
+                <Link href="/toilet-paper" className={styles.dropdownItem}>
                   <div className={styles.dropdownContent}>
                     <div className={styles.dropdownTitle}>Toilet Paper</div>
                     <div className={styles.dropdownDescription}> Server Management Solution</div>
@@ -55,7 +55,7 @@ export default function HomePage() {
               
               <div className={styles.dropdownSection}>
                 <div className={styles.dropdownCategory}>Automation</div>
-                <Link href="/applications/automater" className={styles.dropdownItem}>
+                <Link href="/automater" className={styles.dropdownItem}>
                   <div className={styles.dropdownContent}>
                     <div className={styles.dropdownTitle}>Automater</div>
                     <div className={styles.dropdownDescription}>Automate Your Discord Server Tasks</div>
@@ -65,7 +65,7 @@ export default function HomePage() {
 
               <div className={styles.dropdownSection}>
                 <div className={styles.dropdownCategory}>Entertainment</div>
-                <Link href="/applications/game-arcade" className={styles.dropdownItem}>
+                <Link href="/game-arcade" className={styles.dropdownItem}>
                   <div className={styles.dropdownContent}>
                     <div className={styles.dropdownTitle}>Game Arcade</div>
                     <div className={styles.dropdownDescription}>Add Fun and Games to Your Server</div>
