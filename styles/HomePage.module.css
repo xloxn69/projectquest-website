@@ -50,7 +50,7 @@
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scrolled {
@@ -567,7 +567,7 @@
 /* Smooth header background transition */
 .header {
   /* ... existing styles ... */
-  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Enhanced arrow rotation */
@@ -624,4 +624,11 @@
       linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     opacity: 1;
   }
+}
+
+/* Add new class for hidden header */
+.headerHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }

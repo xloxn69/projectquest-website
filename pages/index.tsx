@@ -23,7 +23,7 @@ export default function HomePage() {
   
   return (
     <div className={styles.container}>
-      <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+      <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isMobileNavOpen ? styles.headerHidden : ''}`}>
         <Link href="/" className={styles.logoContainer}>
           <Image
             src="/logo.png"
