@@ -101,6 +101,9 @@
   transition: all 0.2s ease;
   opacity: 1;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .navLink:hover {
@@ -389,17 +392,17 @@
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(23, 23, 23, 0.8);
+  background: rgba(15, 15, 15, 0.98);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 12px;
-  padding: 8px;
+  padding: 12px;
   min-width: 320px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
 .navItem:hover .navDropdown {
@@ -407,23 +410,41 @@
   visibility: visible;
 }
 
+.dropdownSection {
+  padding: 8px 0;
+}
+
+.dropdownSection:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdownCategory {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 12px;
+}
+
 .dropdownItem {
   display: flex;
   align-items: flex-start;
-  padding: 12px;
+  padding: 8px 12px;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.7);
   border-radius: 6px;
   transition: all 0.2s ease;
+  margin: 2px 0;
 }
 
 .dropdownItem:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   color: white;
 }
 
 .dropdownContent {
-  margin-left: 12px;
+  margin-left: 0;
 }
 
 .dropdownTitle {
@@ -436,4 +457,13 @@
 .dropdownDescription {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
+}
+
+/* Add styles for the arrow */
+.navArrow {
+  transition: transform 0.2s ease;
+}
+
+.navItem:hover .navArrow {
+  transform: rotate(-180deg);
 }

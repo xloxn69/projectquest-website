@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Menu } from 'lucide-react'
+import { Menu, ChevronDown } from 'lucide-react'
 import MobileNav from '../components/MobileNav'
 import styles from '../styles/HomePage.module.css'
 
@@ -38,26 +38,40 @@ export default function HomePage() {
             <a href="#" className={styles.navLink}>Product</a>
           </div>
           <div className={styles.navItem}>
-            <a href="#" className={styles.navLink}>Applications</a>
+            <a href="#" className={styles.navLink}>
+              Applications
+              <ChevronDown size={16} className={styles.navArrow} />
+            </a>
             <div className={styles.navDropdown}>
-              <Link href="/applications/toilet-paper" className={styles.dropdownItem}>
-                <div className={styles.dropdownContent}>
-                  <div className={styles.dropdownTitle}>Toilet Paper</div>
-                  <div className={styles.dropdownDescription}>The Ultimate Server Management Solution</div>
-                </div>
-              </Link>
-              <Link href="/applications/automater" className={styles.dropdownItem}>
-                <div className={styles.dropdownContent}>
-                  <div className={styles.dropdownTitle}>Automater</div>
-                  <div className={styles.dropdownDescription}>Automate Your Discord Server Tasks</div>
-                </div>
-              </Link>
-              <Link href="/applications/game-arcade" className={styles.dropdownItem}>
-                <div className={styles.dropdownContent}>
-                  <div className={styles.dropdownTitle}>Game Arcade</div>
-                  <div className={styles.dropdownDescription}>Add Fun and Games to Your Server</div>
-                </div>
-              </Link>
+              <div className={styles.dropdownSection}>
+                <div className={styles.dropdownCategory}>Server Management</div>
+                <Link href="/applications/toilet-paper" className={styles.dropdownItem}>
+                  <div className={styles.dropdownContent}>
+                    <div className={styles.dropdownTitle}>Toilet Paper</div>
+                    <div className={styles.dropdownDescription}>The Ultimate Server Management Solution</div>
+                  </div>
+                </Link>
+              </div>
+              
+              <div className={styles.dropdownSection}>
+                <div className={styles.dropdownCategory}>Automation</div>
+                <Link href="/applications/automater" className={styles.dropdownItem}>
+                  <div className={styles.dropdownContent}>
+                    <div className={styles.dropdownTitle}>Automater</div>
+                    <div className={styles.dropdownDescription}>Automate Your Discord Server Tasks</div>
+                  </div>
+                </Link>
+              </div>
+
+              <div className={styles.dropdownSection}>
+                <div className={styles.dropdownCategory}>Entertainment</div>
+                <Link href="/applications/game-arcade" className={styles.dropdownItem}>
+                  <div className={styles.dropdownContent}>
+                    <div className={styles.dropdownTitle}>Game Arcade</div>
+                    <div className={styles.dropdownDescription}>Add Fun and Games to Your Server</div>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
           <div className={styles.navItem}>
