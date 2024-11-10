@@ -62,7 +62,7 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
-  animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .logo {
@@ -330,8 +330,8 @@
 }
 
 .footerColumn a:hover {
-  transform: translateX(8px);
   color: #ffffff;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
@@ -401,7 +401,7 @@
   position: absolute;
   top: calc(100% + 8px);
   left: 50%;
-  transform: translateX(-50%) translateY(10px);
+  transform: translateY(10px);
   background: rgba(10, 10, 10, 0.99);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -418,7 +418,7 @@
 .navItem:hover .navDropdown {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 
 .dropdownSection {
@@ -447,12 +447,12 @@
   border-radius: 6px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 2px 0;
-  transform: translateX(-10px);
+  transform: translateY(5px);
   opacity: 0;
 }
 
 .navItem:hover .dropdownItem {
-  transform: translateX(0);
+  transform: translateY(0);
   opacity: 1;
 }
 
@@ -487,14 +487,12 @@
 }
 
 /* Update existing and add new animation keyframes */
-@keyframes slideIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(-20px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
   }
 }
 
@@ -522,7 +520,7 @@
 
 /* Animate logo on page load */
 .logoContainer {
-  animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* Animate nav items on page load */
@@ -562,8 +560,8 @@
 }
 
 .footerColumn a:hover {
-  transform: translateX(8px);
   color: #ffffff;
+  transform: translateY(-2px);
 }
 
 /* Smooth header background transition */
