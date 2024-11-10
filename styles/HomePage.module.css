@@ -22,6 +22,11 @@
   background-size: 100% 100%, 40px 40px, 40px 40px;
   background-position: center center, top left, top left;
   background-attachment: fixed;
+  transition: filter 0.2s ease;
+}
+
+.container.hasOpenDropdown {
+  filter: blur(1px);
 }
 
 .container::before {
@@ -403,6 +408,7 @@
   transition: all 0.2s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  filter: blur(0);
 }
 
 .navItem:hover .navDropdown {
