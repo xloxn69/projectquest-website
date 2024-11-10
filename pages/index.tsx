@@ -35,6 +35,9 @@ export default function HomePage() {
         </Link>
         <nav className={styles.desktopNav}>
           <div className={styles.navItem}>
+            <a href="#" className={styles.navLink}>Product</a>
+          </div>
+          <div className={styles.navItem}>
             <a href="#" className={styles.navLink}>Applications</a>
             <div className={styles.navDropdown}>
               <Link href="/applications/toilet-paper" className={styles.dropdownItem}>
@@ -58,13 +61,13 @@ export default function HomePage() {
             </div>
           </div>
           <div className={styles.navItem}>
-            <a href="#" className={styles.navLink}>Stuff <i className="fas fa-chevron-down"></i></a>
+            <a href="#" className={styles.navLink}>Resources</a>
           </div>
           <div className={styles.navItem}>
-            <a href="#" className={styles.navLink}>Stuff <i className="fas fa-chevron-down"></i></a>
+            <a href="#" className={styles.navLink}>Docs</a>
           </div>
           <div className={styles.navItem}>
-            <a href="#" className={styles.navLink}>Stuff</a>
+            <a href="#" className={styles.navLink}>Pricing</a>
           </div>
         </nav>
         <div className={styles.authButtons}>

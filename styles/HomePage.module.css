@@ -11,9 +11,14 @@
   display: flex;
   flex-direction: column;
   background-image: 
-    radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%),
-    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    linear-gradient(to bottom, 
+      rgba(0, 0, 0, 1) 0%, 
+      rgba(0, 0, 0, 0.3) 20%, 
+      rgba(0, 0, 0, 0.3) 80%, 
+      rgba(0, 0, 0, 1) 100%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 100% 100%, 40px 40px, 40px 40px;
   background-position: center center, top left, top left;
   background-attachment: fixed;
@@ -47,13 +52,11 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  transition: background-color 0.3s ease;
-  padding: 15px 24px;
+  background-color: transparent;
+  padding: 16px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 48px;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
@@ -61,6 +64,7 @@
 
 .scrolled {
   background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .logoContainer {
@@ -78,12 +82,11 @@
 
 .desktopNav {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   align-items: center;
-  margin: 0 auto;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  transform: none;
+  margin: 0;
 }
 
 .navItem {
@@ -91,18 +94,19 @@
 }
 
 .navLink {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
-  opacity: 0.8;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  opacity: 1;
+  font-weight: 500;
 }
 
 .navLink:hover {
+  color: rgba(255, 255, 255, 1);
   background-color: rgba(255, 255, 255, 0.1);
-  opacity: 1;
 }
 
 .authButtons {
@@ -384,19 +388,17 @@
 /* Add these new styles */
 .navDropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(12px);
+  background: rgb(23, 23, 23);
   border-radius: 12px;
   padding: 8px;
-  min-width: 240px;
+  min-width: 320px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 8px;
 }
 
 .navItem:hover .navDropdown {
@@ -409,13 +411,14 @@
   align-items: flex-start;
   padding: 12px;
   text-decoration: none;
-  color: #fff;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
 .dropdownItem:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
 }
 
 .dropdownContent {
@@ -426,10 +429,10 @@
   font-weight: 500;
   font-size: 14px;
   margin-bottom: 4px;
-  color: #fff;
+  color: inherit;
 }
 
 .dropdownDescription {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
 }
