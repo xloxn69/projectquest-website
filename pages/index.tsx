@@ -23,6 +23,9 @@ export default function HomePage() {
   
   return (
     <div className={styles.container}>
+      <div className={styles.splineContainer}>
+        <spline-viewer url="https://prod.spline.design/QvjkxNYSMFn5ZTHX/scene.splinecode"></spline-viewer>
+      </div>
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
         <Link href="/" className={styles.logoContainer}>
           <Image
