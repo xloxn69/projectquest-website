@@ -17,7 +17,6 @@
   background-size: 100% 100%, 40px 40px, 40px 40px;
   background-position: center center, top left, top left;
   background-attachment: fixed;
-  filter: blur(0.2px);
 }
 
 .container::before {
