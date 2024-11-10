@@ -60,6 +60,7 @@
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scrolled {
@@ -71,6 +72,7 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
+  animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .logo {
@@ -90,7 +92,15 @@
 
 .navItem {
   position: relative;
+  opacity: 0;
+  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+
+.navItem:nth-child(1) { animation-delay: 0.1s; }
+.navItem:nth-child(2) { animation-delay: 0.2s; }
+.navItem:nth-child(3) { animation-delay: 0.3s; }
+.navItem:nth-child(4) { animation-delay: 0.4s; }
+.navItem:nth-child(5) { animation-delay: 0.5s; }
 
 .navLink {
   color: rgba(255, 255, 255, 0.7);
@@ -98,7 +108,7 @@
   font-size: 14px;
   padding: 8px 12px;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
   font-weight: 500;
   display: flex;
@@ -115,6 +125,8 @@
   display: flex;
   gap: 12px;
   margin-left: auto;
+  opacity: 0;
+  animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
 }
 
 .btnSignin, .btnStart {
@@ -122,6 +134,7 @@
   border-radius: 4px;
   text-decoration: none;
   font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btnSignin {
@@ -132,6 +145,11 @@
 .btnStart {
   background-color: white;
   color: black;
+}
+
+.btnSignin:hover, .btnStart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .hero {
@@ -318,12 +336,12 @@
   color: #a0a0a0;
   text-decoration: none;
   margin-bottom: 8px;
-  transition: color 0.3s, transform 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footerColumn a:hover {
+  transform: translateX(8px);
   color: #ffffff;
-  transform: translateX(5px);
 }
 
 @media (max-width: 768px) {
@@ -350,6 +368,7 @@
 
 .mobileMenuButton {
   display: none;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (max-width: 768px) {
@@ -368,7 +387,8 @@
   }
 
   .mobileMenuButton:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
   }
 }
 
@@ -391,7 +411,7 @@
   position: absolute;
   top: calc(100% + 8px);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(10px);
   background: rgba(10, 10, 10, 0.99);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -408,6 +428,7 @@
 .navItem:hover .navDropdown {
   opacity: 1;
   visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .dropdownSection {
@@ -434,8 +455,15 @@
   text-decoration: none;
   color: rgba(255, 255, 255, 0.7);
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 2px 0;
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.navItem:hover .dropdownItem {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .dropdownItem:hover {
@@ -461,9 +489,115 @@
 
 /* Add styles for the arrow */
 .navArrow {
-  transition: transform 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navItem:hover .navArrow {
   transform: rotate(-180deg);
+}
+
+/* Update existing and add new animation keyframes */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Add delay for each dropdown item */
+.dropdownItem:nth-child(1) { transition-delay: 0.05s; }
+.dropdownItem:nth-child(2) { transition-delay: 0.1s; }
+.dropdownItem:nth-child(3) { transition-delay: 0.15s; }
+
+/* Smooth hover transitions for nav links */
+.navLink {
+  /* ... existing styles ... */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animate logo on page load */
+.logoContainer {
+  animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Animate nav items on page load */
+.navItem {
+  opacity: 0;
+  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.navItem:nth-child(1) { animation-delay: 0.1s; }
+.navItem:nth-child(2) { animation-delay: 0.2s; }
+.navItem:nth-child(3) { animation-delay: 0.3s; }
+.navItem:nth-child(4) { animation-delay: 0.4s; }
+.navItem:nth-child(5) { animation-delay: 0.5s; }
+
+/* Animate auth buttons */
+.authButtons {
+  /* ... existing styles ... */
+  opacity: 0;
+  animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+}
+
+/* Smooth button hover effects */
+.btnSignin, .btnStart {
+  /* ... existing styles ... */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnSignin:hover, .btnStart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Animate footer links */
+.footerColumn a {
+  /* ... existing styles ... */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footerColumn a:hover {
+  transform: translateX(8px);
+  color: #ffffff;
+}
+
+/* Smooth header background transition */
+.header {
+  /* ... existing styles ... */
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced arrow rotation */
+.navArrow {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navItem:hover .navArrow {
+  transform: rotate(-180deg);
+}
+
+/* Mobile menu button animation */
+.mobileMenuButton {
+  /* ... existing styles ... */
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobileMenuButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
