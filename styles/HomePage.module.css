@@ -52,19 +52,18 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: transparent;
-  padding: 16px 24px;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 24px;
   display: flex;
   align-items: center;
-  gap: 48px;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
+  gap: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .scrolled {
   background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
 }
 
 .logoContainer {
@@ -75,18 +74,16 @@
 }
 
 .logo {
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-left: 8px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .desktopNav {
   display: flex;
-  gap: 24px;
+  gap: 4px;
   align-items: center;
-  position: static;
-  transform: none;
-  margin: 0;
 }
 
 .navItem {
@@ -97,40 +94,49 @@
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 14px;
-  padding: 8px 12px;
+  padding: 6px 12px;
   border-radius: 6px;
-  transition: all 0.2s ease;
-  opacity: 1;
+  transition: all 0.15s ease;
   font-weight: 500;
 }
 
 .navLink:hover {
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 0.95);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 .authButtons {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   margin-left: auto;
-  z-index: 1;
 }
 
 .btnSignin, .btnStart {
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
   text-decoration: none;
   font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s ease;
 }
 
 .btnSignin {
-  border: 1px solid white;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btnSignin:hover {
   color: white;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .btnStart {
   background-color: white;
   color: black;
+}
+
+.btnStart:hover {
+  opacity: 0.9;
 }
 
 .hero {
@@ -391,7 +397,9 @@
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgb(23, 23, 23);
+  background: rgba(23, 23, 23, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 12px;
   padding: 8px;
   min-width: 320px;
@@ -399,6 +407,7 @@
   visibility: hidden;
   transition: all 0.2s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .navItem:hover .navDropdown {
@@ -409,30 +418,31 @@
 .dropdownItem {
   display: flex;
   align-items: flex-start;
-  padding: 12px;
+  padding: 10px 12px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .dropdownItem:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   color: white;
 }
 
 .dropdownContent {
-  margin-left: 12px;
+  margin-left: 0;
 }
 
 .dropdownTitle {
   font-weight: 500;
   font-size: 14px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   color: inherit;
 }
 
 .dropdownDescription {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
 }
