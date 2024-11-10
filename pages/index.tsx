@@ -45,10 +45,10 @@ export default function HomePage() {
             <div className={styles.navDropdown}>
               <div className={styles.dropdownSection}>
                 <div className={styles.dropdownCategory}>Server Management</div>
-                <Link href="/toilet-paper" className={styles.dropdownItem}>
+                <Link href="/toiletpaper" className={styles.dropdownItem}>
                   <div className={styles.dropdownContent}>
                     <div className={styles.dropdownTitle}>Toilet Paper</div>
-                    <div className={styles.dropdownDescription}> Server Management Solution</div>
+                    <div className={styles.dropdownDescription}>Server Management Solution</div>
                   </div>
                 </Link>
               </div>
@@ -134,9 +134,9 @@ export default function HomePage() {
           </div>
           <div className={styles.footerColumn}>
             <h4>Applications</h4>
-            <a href="#">Toilet Paper</a>
-            <a href="#">Automater</a>
-            <a href="#">Game Arcade</a>
+            <Link href="/toiletpaper">Toilet Paper</Link>
+            <Link href="/automater">Automater</Link>
+            <Link href="/game-arcade">Game Arcade</Link>
           </div>
           <div className={styles.footerColumn}>
             <h4>Legal</h4>

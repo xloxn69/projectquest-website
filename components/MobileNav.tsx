@@ -25,10 +25,9 @@ export default function MobileNav({ isOpen, onClose, onOpen }: {
           </div>
           <nav className={styles.mobileNavMenu}>
             <ul>
-              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Applications</Link></li>
-              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Stuff</Link></li>
-              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Stuff</Link></li>
-              <li><Link href="#" className={styles.mobileNavLink} onClick={onClose}>Stuff</Link></li>
+              <li><Link href="/toiletpaper" className={styles.mobileNavLink} onClick={onClose}>Toilet Paper</Link></li>
+              <li><Link href="/automater" className={styles.mobileNavLink} onClick={onClose}>Automater</Link></li>
+              <li><Link href="/game-arcade" className={styles.mobileNavLink} onClick={onClose}>Game Arcade</Link></li>
             </ul>
           </nav>
           <div className={styles.authButtons}>
