@@ -1,0 +1,171 @@
+.docsContainer {
+  display: flex;
+  min-height: 100vh;
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.sidebar {
+  width: 260px;
+  background: #0d0d0d;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #a0a0a0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.navSection {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #666;
+  margin: 24px 0 8px;
+  padding: 0 12px;
+}
+
+.mainContent {
+  flex: 1;
+  margin-left: 260px;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 8px 16px;
+  flex: 1;
+  max-width: 600px;
+}
+
+.searchInput {
+  background: none;
+  border: none;
+  color: white;
+  width: 100%;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.searchInput::placeholder {
+  color: #666;
+}
+
+.githubButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #2a2a2a;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.githubButton:hover {
+  background: #3a3a3a;
+}
+
+.docCard {
+  background: #1d1d1d;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.docImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.docInfo {
+  padding: 24px;
+}
+
+.docInfo h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.sidebarFooter {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  color: #666;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.footerLinks a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  color: #999;
+} 
