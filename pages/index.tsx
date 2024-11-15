@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Menu, ChevronDown } from 'lucide-react'
 import MobileNav from '../components/MobileNav'
 import styles from '../styles/HomePage.module.css'
+import Testimonials from '../components/Testimonials'
 
 export default function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -112,36 +113,39 @@ export default function HomePage() {
             <a href="#" className={`${styles.btn} ${styles.btnSecondary}`}>Discord</a>
           </div>
         </section>
-      </main>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <div className={styles.footerColumn}>
-            <h4>Resources</h4>
-            <a href="#">Blog</a>
-            <a href="#">Documentation</a>
-            <a href="#">Developers</a>
-            <a href="#">Support</a>
+        <div className={styles.gridFadeSection} />
+        <Testimonials />
+
+        <footer className={styles.footer}>
+          <div className={styles.footerContent}>
+            <div className={styles.footerColumn}>
+              <h4>Resources</h4>
+              <a href="#">Blog</a>
+              <a href="#">Documentation</a>
+              <a href="#">Developers</a>
+              <a href="#">Support</a>
+            </div>
+            <div className={styles.footerColumn}>
+              <h4>Community</h4>
+              <a href="#">Discord Server</a>
+              <a href="#">System Status</a>
+              <a href="#">Become a Partner</a>
+            </div>
+            <div className={styles.footerColumn}>
+              <h4>Applications</h4>
+              <Link href="/toiletpaper">Toilet Paper</Link>
+              <Link href="/automater">Automater</Link>
+              <Link href="/game-arcade">Game Arcade</Link>
+            </div>
+            <div className={styles.footerColumn}>
+              <h4>Legal</h4>
+              <a href="#">Terms of Service</a>
+              <a href="#">Privacy Policy</a>
+            </div>
           </div>
-          <div className={styles.footerColumn}>
-            <h4>Community</h4>
-            <a href="#">Discord Server</a>
-            <a href="#">System Status</a>
-            <a href="#">Become a Partner</a>
-          </div>
-          <div className={styles.footerColumn}>
-            <h4>Applications</h4>
-            <Link href="/toiletpaper">Toilet Paper</Link>
-            <Link href="/automater">Automater</Link>
-            <Link href="/game-arcade">Game Arcade</Link>
-          </div>
-          <div className={styles.footerColumn}>
-            <h4>Legal</h4>
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </main>
     </div>
   )
 }
