@@ -5,10 +5,12 @@ import { Menu, ChevronDown } from 'lucide-react'
 import MobileNav from '../components/MobileNav'
 import styles from '../styles/HomePage.module.css'
 import Testimonials from '../components/Testimonials'
+import useLocomotiveScroll from '../hooks/useLocomotiveScroll'
 
 export default function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
+  const scrollRef = useLocomotiveScroll()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,79 +27,81 @@ export default function HomePage() {
   return (
     <div className={styles.container}>
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isMobileNavOpen ? styles.headerHidden : ''}`}>
-        <Link href="/" className={styles.logoContainer}>
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={30}
-            height={30}
-          />
-          <span className={styles.logo}>Project Quest</span>
-        </Link>
-        <nav className={styles.desktopNav}>
-          <div className={styles.navItem}>
-            <a href="#" className={styles.navLink}>Product</a>
-          </div>
-          <div className={styles.navItem}>
-            <a href="#" className={styles.navLink}>
-              Applications
-              <ChevronDown size={16} className={styles.navArrow} />
-            </a>
-            <div className={styles.navDropdown}>
-              
-              <div className={styles.dropdownSection}>
-                <div className={styles.dropdownCategory}>Server Management</div>
-                <Link href="/automater" className={styles.dropdownItem}>
-                  <div className={styles.dropdownContent}>
-                    <div className={styles.dropdownTitle}>Automater</div>
-                    <div className={styles.dropdownDescription}>Automate Your Discord Server Tasks</div>
-                  </div>
-                </Link>
-              </div>
+        <div className={styles.headerContent}>
+          <Link href="/" className={styles.logoContainer}>
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={30}
+              height={30}
+            />
+            <span className={styles.logo}>Project Quest</span>
+          </Link>
+          <nav className={styles.desktopNav}>
+            <div className={styles.navItem}>
+              <a href="#" className={styles.navLink}>Product</a>
+            </div>
+            <div className={styles.navItem}>
+              <a href="#" className={styles.navLink}>
+                Applications
+                <ChevronDown size={16} className={styles.navArrow} />
+              </a>
+              <div className={styles.navDropdown}>
+                
+                <div className={styles.dropdownSection}>
+                  <div className={styles.dropdownCategory}>Server Management</div>
+                  <Link href="/automater" className={styles.dropdownItem}>
+                    <div className={styles.dropdownContent}>
+                      <div className={styles.dropdownTitle}>Automater</div>
+                      <div className={styles.dropdownDescription}>Automate Your Discord Server Tasks</div>
+                    </div>
+                  </Link>
+                </div>
 
-              <div className={styles.dropdownSection}>
-                <div className={styles.dropdownCategory}>Entertainment</div>
-                <Link href="/game-arcade" className={styles.dropdownItem}>
-                  <div className={styles.dropdownContent}>
-                    <div className={styles.dropdownTitle}>Game Arcade</div>
-                    <div className={styles.dropdownDescription}>Add Fun and Games to Your Server</div>
-                  </div>
-                </Link>
-                <Link href="/toiletpaper" className={styles.dropdownItem}>
-                  <div className={styles.dropdownContent}>
-                    <div className={styles.dropdownTitle}>Toilet Paper</div>
-                    <div className={styles.dropdownDescription}>Server Management Solution</div>
-                  </div>
-                </Link>
+                <div className={styles.dropdownSection}>
+                  <div className={styles.dropdownCategory}>Entertainment</div>
+                  <Link href="/game-arcade" className={styles.dropdownItem}>
+                    <div className={styles.dropdownContent}>
+                      <div className={styles.dropdownTitle}>Game Arcade</div>
+                      <div className={styles.dropdownDescription}>Add Fun and Games to Your Server</div>
+                    </div>
+                  </Link>
+                  <Link href="/toiletpaper" className={styles.dropdownItem}>
+                    <div className={styles.dropdownContent}>
+                      <div className={styles.dropdownTitle}>Toilet Paper</div>
+                      <div className={styles.dropdownDescription}>Server Management Solution</div>
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
+            <div className={styles.navItem}>
+              <a href="#" className={styles.navLink}>Resources</a>
+            </div>
+            <div className={styles.navItem}>
+              <a href="#" className={styles.navLink}>Docs</a>
+            </div>
+            <div className={styles.navItem}>
+              <a href="#" className={styles.navLink}>Pricing</a>
+            </div>
+          </nav>
+          <div className={styles.authButtons}>
+            <a href="#signin" className={styles.btnSignin}>Discord</a>
+            <a href="#start" className={styles.btnStart}>Get Started</a>
           </div>
-          <div className={styles.navItem}>
-            <a href="#" className={styles.navLink}>Resources</a>
+          <div className={styles.mobileButtons}>
+            <button onClick={toggleMobileNav} className={styles.mobileMenuButton}>
+              <Menu size={24} />
+            </button>
           </div>
-          <div className={styles.navItem}>
-            <a href="#" className={styles.navLink}>Docs</a>
-          </div>
-          <div className={styles.navItem}>
-            <a href="#" className={styles.navLink}>Pricing</a>
-          </div>
-        </nav>
-        <div className={styles.authButtons}>
-          <a href="#signin" className={styles.btnSignin}>Discord</a>
-          <a href="#start" className={styles.btnStart}>Get Started</a>
-        </div>
-        <div className={styles.mobileButtons}>
-          <button onClick={toggleMobileNav} className={styles.mobileMenuButton}>
-            <Menu size={24} />
-          </button>
         </div>
       </header>
 
       <MobileNav isOpen={isMobileNavOpen} onClose={() => setIsMobileNavOpen(false)} />
 
-      <main>
-        <section className={styles.hero}>
-          <h1>
+      <main ref={scrollRef} data-scroll-container>
+        <section className={styles.hero} data-scroll-section>
+          <h1 data-scroll data-scroll-speed="1">
             <span className={styles.innovativeGlow}>Innovative</span> <br className={styles.mobileOnly} /> 
             <span className={styles.noWrap}>Bots, Endless</span> <br className={styles.mobileOnly} />
             <span className={styles.glowContainer}>
@@ -105,19 +109,19 @@ export default function HomePage() {
               <span className={styles.gradientClear}>Possibilities</span>
             </span>
           </h1>
-          <p className={styles.heroText}>
+          <p className={styles.heroText} data-scroll data-scroll-speed="2">
             We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.
           </p>
-          <div className={styles.heroButtons}>
+          <div className={styles.heroButtons} data-scroll data-scroll-speed="3">
             <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get Started</a>
             <a href="#" className={`${styles.btn} ${styles.btnSecondary}`}>Discord</a>
           </div>
         </section>
 
-        <div className={styles.gridFadeSection} />
+        <div className={styles.gridFadeSection} data-scroll-section />
         <Testimonials />
 
-        <footer className={styles.footer}>
+        <footer className={styles.footer} data-scroll-section>
           <div className={styles.footerContent}>
             <div className={styles.footerColumn}>
               <h4>Resources</h4>

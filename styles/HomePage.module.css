@@ -44,13 +44,16 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 16px 24px;
+  width: 100%;
+}
+
+.headerContent {
   display: flex;
   align-items: center;
   gap: 48px;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scrolled {
@@ -219,6 +222,11 @@
   border-radius: 20px;
   text-decoration: none;
   animation: fadeInUp 0.8s ease-out 0.6s both;
+  min-width: 120px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btnPrimary {

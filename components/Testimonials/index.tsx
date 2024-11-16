@@ -114,24 +114,6 @@ export default function Testimonials() {
       role: "Bot Name",
       image: "https://cdn.discordapp.com/guilds/1039292449325060178/users/534020157132111872/avatars/08aaa048a093ee702d7049683ca77148.webp?size=128",
       quote: "Review quote here"
-    },
-    {
-      name: "Name",
-      role: "Bot Name",
-      image: "https://cdn.discordapp.com/guilds/1039292449325060178/users/534020157132111872/avatars/08aaa048a093ee702d7049683ca77148.webp?size=128",
-      quote: "Review quote here"
-    },
-    {
-      name: "Name",
-      role: "Bot Name",
-      image: "https://cdn.discordapp.com/guilds/1039292449325060178/users/534020157132111872/avatars/08aaa048a093ee702d7049683ca77148.webp?size=128",
-      quote: "Review quote here"
-    },
-    {
-      name: "Name",
-      role: "Bot Name",
-      image: "https://cdn.discordapp.com/guilds/1039292449325060178/users/534020157132111872/avatars/08aaa048a093ee702d7049683ca77148.webp?size=128",
-      quote: "Review quote here"
     }
   ]
 
@@ -155,7 +137,7 @@ export default function Testimonials() {
       })
 
       let currentTranslate = 0
-      const speeds = [0.5, 0.3, 0.4]
+      const speeds = [1.2, 0.8, 1.0]
 
       const animate = () => {
         currentTranslate -= speeds[index]
@@ -182,28 +164,18 @@ export default function Testimonials() {
 
   return (
     <>
-      <div className={styles.gridFadeOut} />
+      <div className={styles.gridFadeOut} data-scroll-section />
       
-      <div className={styles.container}>
+      <div className={styles.container} data-scroll-section>
         <div className={styles.content}>
-          <div className={styles.header}>
+          <div className={styles.header} data-scroll data-scroll-speed="1">
             <h2>Love from all over the World!</h2>
             <p>
-              Locadapt has just released, and we're sure future feedback will be just as amazing as the placeholders below!
+              Project Quest has just released, and we're sure future feedback will be just as amazing as the placeholders below!
             </p>
-            <br>
-            </br>
-            <br>
-            </br>
-            <br>
-            </br>
-            <br>
-            </br>
-            <br>
-            </br>
           </div>
           
-          <div className={styles.testimonialWrapper}>
+          <div className={styles.testimonialWrapper} data-scroll data-scroll-speed="2">
             <div className={styles.gradientTop} />
             <div className={styles.columnGrid}>
               {columns.map((column, columnIndex) => (
