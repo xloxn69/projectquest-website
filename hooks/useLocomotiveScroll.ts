@@ -14,26 +14,30 @@ export default function useLocomotiveScroll() {
       
       if (!scrollRef.current) return
 
+      const isMobile = window.innerWidth <= 768
+
       locomotiveScrollRef.current = new locomotiveScroll({
         el: scrollRef.current,
         smooth: true,
         smoothMobile: true,
-        multiplier: 1.5,
-        lerp: 0.1,
+        multiplier: isMobile ? 0.75 : 1.5,
+        lerp: isMobile ? 0.15 : 0.1,
         class: 'is-revealed',
         reloadOnContextChange: true,
-        touchMultiplier: 3,
+        touchMultiplier: 1.5,
         smartphone: {
           smooth: true,
-          direction: 'vertical'
+          direction: 'vertical',
+          multiplier: 0.75
         },
         tablet: {
           smooth: true,
-          direction: 'vertical'
+          direction: 'vertical',
+          multiplier: 0.85
         },
         getDirection: true,
         getSpeed: true,
-        inertia: 0.7,
+        inertia: isMobile ? 0.5 : 0.7,
         useKeyboard: true,
         useTouch: true,
         resetNativeScroll: false
