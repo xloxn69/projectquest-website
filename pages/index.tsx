@@ -101,20 +101,22 @@ export default function HomePage() {
 
       <main ref={scrollRef} data-scroll-container>
         <section className={styles.hero} data-scroll-section>
-          <h1 data-scroll data-scroll-speed="1">
-            <span className={styles.innovativeGlow}>Innovative</span> <br className={styles.mobileOnly} /> 
-            <span className={styles.noWrap}>Bots, Endless</span> <br className={styles.mobileOnly} />
-            <span className={styles.glowContainer}>
-              <span className={styles.gradientBlur}>Possibilities</span>
-              <span className={styles.gradientClear}>Possibilities</span>
-            </span>
-          </h1>
-          <p className={styles.heroText} data-scroll data-scroll-speed="2">
-            We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.
-          </p>
-          <div className={styles.heroButtons} data-scroll data-scroll-speed="3">
-            <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get Started</a>
-            <a href="#" className={`${styles.btn} ${styles.btnSecondary}`}>Discord</a>
+          <div className={styles.heroContent} data-scroll data-scroll-speed="1">
+            <h1>
+              <span className={styles.innovativeGlow}>Innovative</span> <br className={styles.mobileOnly} /> 
+              <span className={styles.noWrap}>Bots, Endless</span> <br className={styles.mobileOnly} />
+              <span className={styles.glowContainer}>
+                <span className={styles.gradientBlur}>Possibilities</span>
+                <span className={styles.gradientClear}>Possibilities</span>
+              </span>
+            </h1>
+            <p className={styles.heroText}>
+              We create innovative Discord bots for a variety of server needs, offering endless possibilities for automation and engagement.
+            </p>
+            <div className={styles.heroButtons}>
+              <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>Get Started</a>
+              <a href="#" className={`${styles.btn} ${styles.btnSecondary}`}>Discord</a>
+            </div>
           </div>
         </section>
 

@@ -153,6 +153,13 @@
   align-items: center;
 }
 
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 /* Default styling for desktop (no line breaks) */
 .hero h1 {
   font-size: 60px;
