@@ -25,33 +25,41 @@ export default function useLocomotiveScroll() {
         touchMultiplier: 3,
         smartphone: {
           smooth: true,
-          multiplier: 2,
-          breakpoint: 767,
+          direction: 'vertical'
         },
         tablet: {
           smooth: true,
-          multiplier: 2,
-          breakpoint: 1024,
+          direction: 'vertical'
         },
-        gestureDirection: 'vertical',
         getDirection: true,
         getSpeed: true,
         inertia: 0.7,
+        useKeyboard: true,
+        useTouch: true,
+        resetNativeScroll: false
       })
 
-      // Update on window resize for better responsiveness
-      window.addEventListener('resize', () => {
+      // Handle resize
+      const handleResize = () => {
         if (locomotiveScrollRef.current) {
           locomotiveScrollRef.current.update()
         }
-      })
-    })()
-
-    return () => {
-      if (locomotiveScrollRef.current) {
-        locomotiveScrollRef.current.destroy()
       }
-    }
+
+      window.addEventListener('resize', handleResize)
+      
+      // Initial update
+      setTimeout(() => {
+        handleResize()
+      }, 1000)
+
+      return () => {
+        window.removeEventListener('resize', handleResize)
+        if (locomotiveScrollRef.current) {
+          locomotiveScrollRef.current.destroy()
+        }
+      }
+    })()
   }, [])
 
   return scrollRef

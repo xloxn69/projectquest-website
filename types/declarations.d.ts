@@ -13,7 +13,7 @@ declare module '*.jpg'
 declare module '*.jpeg'
 declare module '*.gif'
 
-// Add Locomotive Scroll type declaration
+// Updated Locomotive Scroll type declaration
 declare module 'locomotive-scroll' {
   export interface LocomotiveScrollOptions {
     el: HTMLElement;
@@ -48,6 +48,9 @@ declare module 'locomotive-scroll' {
     };
     reloadOnContextChange?: boolean;
     lerp?: number;
+    scrollbarContainer?: HTMLElement;
+    useKeyboard?: boolean;
+    useTouch?: boolean;
   }
 
   export default class LocomotiveScroll {

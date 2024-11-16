@@ -13,122 +13,47 @@ html, body {
   box-sizing: inherit;
 }
 
-/* Enhanced Scrollbar Styles */
+/* Enhanced scrollbar styles */
 ::-webkit-scrollbar {
-  width: 12px;
-  background: transparent;
-  transition: all 0.3s ease;
+  width: 8px;
+  background-color: transparent;
+  transition: width 0.2s ease;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
   margin: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  border: 3px solid rgba(0, 0, 0, 0.1);
-  background-clip: padding-box;
+  border-radius: 4px;
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
-  border: 3px solid rgba(0, 0, 0, 0.1);
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb:active {
   background: rgba(255, 255, 255, 0.25);
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
 }
 
-/* Scrollbar Corner */
-::-webkit-scrollbar-corner {
-  background: transparent;
-}
-
-/* Firefox Scrollbar */
+/* Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
 }
 
 /* Locomotive Scroll styles */
-html.has-scroll-smooth {
+.has-scroll-smooth {
   overflow: hidden;
 }
 
-html.has-scroll-dragging {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.has-scroll-smooth body {
-  overflow: hidden;
-}
-
-.has-scroll-smooth [data-scroll-container] {
+[data-scroll-container] {
+  overflow: visible !important;
   min-height: 100vh;
-}
-
-[data-scroll-direction="horizontal"] [data-scroll-container] {
-  height: 100vh;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-[data-scroll-direction="horizontal"] [data-scroll-section] {
-  display: inline-block;
-  vertical-align: top;
-  white-space: nowrap;
-  height: 100%;
-}
-
-/* Enhanced Locomotive Scrollbar */
-.c-scrollbar {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 12px;
-  height: 100%;
-  transform-origin: center right;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-}
-
-.c-scrollbar:hover {
-  transform: scaleX(1.2);
-}
-
-.c-scrollbar:hover,
-.has-scroll-scrolling .c-scrollbar,
-.has-scroll-dragging .c-scrollbar {
-  opacity: 1;
-}
-
-.c-scrollbar_thumb {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.15);
-  width: 6px;
-  margin: 3px;
-  border-radius: 10px;
-  cursor: grab;
-  transition: all 0.3s ease;
-}
-
-.c-scrollbar_thumb:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  width: 8px;
-  margin: 2px;
-}
-
-.has-scroll-dragging .c-scrollbar_thumb {
-  cursor: grabbing;
-  background-color: rgba(255, 255, 255, 0.3);
 }
