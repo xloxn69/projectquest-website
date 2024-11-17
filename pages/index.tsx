@@ -152,7 +152,7 @@ export default function HomePage() {
                 <h4>Applications</h4>
                 <Link href="/toiletpaper">Toilet Paper</Link>
                 <Link href="/automater">Automater</Link>
-                <Link href="/game-arcade">Game Arcade</Link>
+                <Link href="/gamearcade">Game Arcade</Link>
               </div>
               <div className={styles.footerColumn}>
                 <h4>Legal</h4>

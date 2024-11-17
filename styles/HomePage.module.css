@@ -542,11 +542,15 @@
   }
 
   .logo {
-    font-size: 26px;
+    font-size: 28px;
   }
 
-  .mobileMenuButton {
-    margin-left: 8px;
+  .headerContent {
+    gap: 2.6px;
+  }
+
+  .logoContainer {
+    gap: 4px;
   }
 }
 

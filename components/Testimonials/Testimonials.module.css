@@ -353,3 +353,30 @@
     font-size: 0.75rem;
   }
 }
+
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: calc(2.5rem + 6px);
+    margin-bottom: 1.5rem;
+  }
+
+  .header p {
+    font-size: calc(1.2rem - 3px);
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  .columnGrid {
+    gap: 1.5rem;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
+  .scrollingContent {
+    gap: 1.5rem;
+  }
+}
