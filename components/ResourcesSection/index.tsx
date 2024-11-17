@@ -41,7 +41,6 @@ export default function ResourcesSection() {
       <div className={styles.gridFadeOut} data-scroll-section />
       <div className={styles.container} data-scroll-section>
         <div ref={sectionRef} className={styles.content}>
-          <span className={styles.label}>Resources</span>
           <h2 className={styles.title}>Jumpstart your Discord server.</h2>
           <p className={styles.subtitle}>
             Browse our documentation, guides, and community resources to get you started with Project Quest.

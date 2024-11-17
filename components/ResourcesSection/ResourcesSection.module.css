@@ -84,7 +84,7 @@
 
 .card {
   background: rgba(10, 10, 10, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.014);
   border-radius: 0.75rem;
   overflow: hidden;
   transition: all 0.3s ease;
