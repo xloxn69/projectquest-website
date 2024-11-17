@@ -10,6 +10,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  animation: fadeIn 1s ease-out;
 }
 
 /* Add a new background wrapper specifically for iOS compatibility */
@@ -50,7 +51,7 @@
   min-height: 100vh;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  animation: slowPan 30s ease-in-out infinite;
+  animation: slowPan 30s ease-in-out infinite, fadeIn 1.5s ease-out;
 }
 
 /* Disable animation on mobile for better performance */
@@ -258,6 +259,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeInUp 1s ease-out;
 }
 
 .heroContent {
@@ -265,6 +267,8 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.3s forwards;
 }
 
 /* Default styling for desktop (no line breaks) */
@@ -332,6 +336,8 @@
   margin-left: auto;
   margin-right: auto;
   animation: fadeInUp 0.8s ease-out 0.4s both;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.6s forwards;
 }
 
 .heroButtons {
@@ -339,6 +345,8 @@
   gap: 12px;
   justify-content: center;
   margin-top: 10px; /* Reduced from 20px */
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.9s forwards;
 }
 
 .btn {
@@ -877,6 +885,8 @@
   width: 100%;
   z-index: 10;
   margin-top: 0;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.6s forwards;
 }
 
 /* Modify the grid fade section */

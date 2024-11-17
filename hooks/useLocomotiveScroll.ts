@@ -31,9 +31,12 @@ export default function useLocomotiveScroll() {
           multiplier: 1.25,
           breakpoint: 767,
           touchMultiplier: 3.5,
-          resetNativeScroll: false,
+          resetNativeScroll: true,
           customScrollBehavior: (position: any, direction: string) => {
-            return direction === 'up' ? position * 1.8 : position;
+            if (document.querySelector('.hero-section')) {
+              return direction === 'up' ? position * 1.8 : position;
+            }
+            return position;
           }
         },
         tablet: {

@@ -51,7 +51,7 @@ export default function HomePage() {
               <div className={styles.navDropdown}>
                 
                 <div className={styles.dropdownSection}>
-                  <div className={styles.dropdownCategory}>Server Management</div>
+                  <div className={styles.dropdownCategory}>Management</div>
                   <Link href="/automater" className={styles.dropdownItem}>
                     <div className={styles.dropdownContent}>
                       <div className={styles.dropdownTitle}>Automater</div>
@@ -59,19 +59,22 @@ export default function HomePage() {
                     </div>
                   </Link>
                 </div>
-
+                
+                <div className={styles.dropdownSection}>
+                  <div className={styles.dropdownCategory}>Economy</div>
+                <Link href="/toiletpaper" className={styles.dropdownItem}>
+                    <div className={styles.dropdownContent}>
+                      <div className={styles.dropdownTitle}>Toilet Paper</div>
+                      <div className={styles.dropdownDescription}>Server Management Solution</div>
+                    </div>
+                  </Link>
+                </div>
                 <div className={styles.dropdownSection}>
                   <div className={styles.dropdownCategory}>Entertainment</div>
                   <Link href="/game-arcade" className={styles.dropdownItem}>
                     <div className={styles.dropdownContent}>
                       <div className={styles.dropdownTitle}>Game Arcade</div>
                       <div className={styles.dropdownDescription}>Add Fun and Games to Your Server</div>
-                    </div>
-                  </Link>
-                  <Link href="/toiletpaper" className={styles.dropdownItem}>
-                    <div className={styles.dropdownContent}>
-                      <div className={styles.dropdownTitle}>Toilet Paper</div>
-                      <div className={styles.dropdownDescription}>Server Management Solution</div>
                     </div>
                   </Link>
                 </div>
@@ -102,7 +105,7 @@ export default function HomePage() {
       <MobileNav isOpen={isMobileNavOpen} onClose={() => setIsMobileNavOpen(false)} />
 
       <main ref={scrollRef} data-scroll-container>
-        <section className={styles.hero} data-scroll-section>
+        <section className={`${styles.hero} hero-section`} data-scroll-section>
           <div className={styles.heroContent} data-scroll data-scroll-speed="1">
             <h1>
               <span className={styles.innovativeGlow}>Innovative</span> <br className={styles.mobileOnly} /> 

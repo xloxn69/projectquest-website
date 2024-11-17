@@ -52,7 +52,7 @@ declare module 'locomotive-scroll' {
       multiplier?: number;
       touchMultiplier?: number;
       resetNativeScroll?: boolean;
-      customScrollBehavior?: (position: any, direction: string) => number;
+      customScrollBehavior?: (position: any, direction: string, section?: any) => number;
     };
     reloadOnContextChange?: boolean;
     lerp?: number;
