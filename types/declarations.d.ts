@@ -40,11 +40,13 @@ declare module 'locomotive-scroll' {
       smooth?: boolean;
       breakpoint?: number;
       direction?: string;
+      multiplier?: number;
     };
     smartphone?: {
       smooth?: boolean;
       breakpoint?: number;
       direction?: string;
+      multiplier?: number;
     };
     reloadOnContextChange?: boolean;
     lerp?: number;

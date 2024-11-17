@@ -20,14 +20,15 @@ export default function useLocomotiveScroll() {
         el: scrollRef.current,
         smooth: true,
         smoothMobile: true,
-        multiplier: isMobile ? 0.75 : 1.5,
-        lerp: isMobile ? 0.15 : 0.1,
+        multiplier: isMobile ? 1.25 : 1.5,
+        lerp: isMobile ? 0.1 : 0.1,
         class: 'is-revealed',
         reloadOnContextChange: true,
-        touchMultiplier: isMobile ? 1.5 : 3,
+        touchMultiplier: isMobile ? 2.5 : 3,
         smartphone: {
           smooth: true,
           direction: 'vertical',
+          multiplier: 1.25,
           breakpoint: 767
         },
         tablet: {
@@ -37,7 +38,7 @@ export default function useLocomotiveScroll() {
         },
         getDirection: true,
         getSpeed: true,
-        inertia: isMobile ? 0.5 : 0.7,
+        inertia: isMobile ? 0.65 : 0.7,
         useKeyboard: true,
         useTouch: true,
         resetNativeScroll: false

@@ -7,7 +7,7 @@ export default function MobileNav({ isOpen, onClose, onOpen }: {
   isOpen: boolean; 
   onClose: () => void;
   onOpen?: () => void;
-}) {
+}): JSX.Element {
   return (
     <>
       <div className={`${styles.backdrop} ${isOpen ? styles.backdropOpen : ''}`} onClick={onClose} />
