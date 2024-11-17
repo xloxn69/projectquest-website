@@ -43,55 +43,55 @@ export default function ResourcesSection() {
         <div ref={sectionRef} className={styles.content}>
           <h2 className={styles.title}>Jumpstart your Discord server.</h2>
           <p className={styles.subtitle}>
-            Browse our documentation, guides, and community resources to get you started with Project Quest.
+            Discover powerful tools and features to enhance your Discord community.
           </p>
           
           <div className={styles.cardGrid}>
-            <Link href="/docs/academy" className={styles.card}>
+            <Link href="/docs/management" className={styles.card}>
               <div className={styles.cardImage}>
                 <Image
-                  src="/placeholder-academy.jpg" // Add a placeholder image
-                  alt="Academy"
+                  src="/placeholder-management.jpg"
+                  alt="Management"
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className={styles.cardContent}>
-                <h3>Academy</h3>
-                <p>Watch tutorials and guides on bot configuration.</p>
-                <span className={styles.cardLink}>Explore the Academy →</span>
+                <h3>Management</h3>
+                <p>Powerful tools to manage your server efficiently.</p>
+                <span className={styles.cardLink}>Explore Management →</span>
               </div>
             </Link>
 
-            <Link href="/blog" className={styles.card}>
+            <Link href="/docs/economy" className={styles.card}>
               <div className={styles.cardImage}>
                 <Image
-                  src="/placeholder-blog.jpg" // Add a placeholder image
-                  alt="Blog"
+                  src="/placeholder-economy.jpg"
+                  alt="Economy"
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className={styles.cardContent}>
-                <h3>Blog</h3>
-                <p>Learn new insights and tips for Discord server management.</p>
-                <span className={styles.cardLink}>Get insights →</span>
+                <h3>Economy</h3>
+                <p>Create engaging economy systems for your community.</p>
+                <span className={styles.cardLink}>View Economy →</span>
               </div>
             </Link>
 
-            <Link href="/community" className={styles.card}>
+            <Link href="/docs/entertainment" className={styles.card}>
               <div className={styles.cardImage}>
                 <Image
-                  src="/placeholder-community.jpg" // Add a placeholder image
-                  alt="Community"
+                  src="/placeholder-entertainment.jpg"
+                  alt="Entertainment"
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className={styles.cardContent}>
-                <h3>Community</h3>
-                <p>Connect with other server owners and bot enthusiasts.</p>
-                <span className={styles.cardLink}>Join Community →</span>
+                <h3>Entertainment</h3>
+                <p>Add fun and engaging activities to your server.</p>
+                <span className={styles.cardLink}>Discover Entertainment →</span>
               </div>
             </Link>
           </div>

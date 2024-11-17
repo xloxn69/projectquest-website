@@ -24,12 +24,17 @@ export default function useLocomotiveScroll() {
         lerp: isMobile ? 0.1 : 0.1,
         class: 'is-revealed',
         reloadOnContextChange: true,
-        touchMultiplier: isMobile ? 2.5 : 3,
+        touchMultiplier: isMobile ? 3.5 : 3,
         smartphone: {
           smooth: true,
           direction: 'vertical',
           multiplier: 1.25,
-          breakpoint: 767
+          breakpoint: 767,
+          touchMultiplier: 3.5,
+          resetNativeScroll: false,
+          customScrollBehavior: (position: any, direction: string) => {
+            return direction === 'up' ? position * 1.4 : position;
+          }
         },
         tablet: {
           smooth: true,
