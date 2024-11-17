@@ -264,14 +264,14 @@
   }
 
   .column {
-    height: 450px;
+    height: 425px;
     overflow: hidden;
   }
 
   .card {
-    min-height: 95px;
+    min-height: 75px;
     height: auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding: 14px 16px;
   }
 
@@ -324,7 +324,7 @@
   }
 
   .scrollingContent {
-    gap: 8px;
+    gap: 10px;
   }
 }
 
