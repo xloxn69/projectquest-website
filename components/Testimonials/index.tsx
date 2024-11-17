@@ -102,18 +102,6 @@ export default function Testimonials() {
       role: "Bot Name",
       image: "https://cdn.discordapp.com/guilds/1039292449325060178/users/534020157132111872/avatars/08aaa048a093ee702d7049683ca77148.webp?size=128",
       quote: "Review quote here"
-    },
-    {
-      name: "Name",
-      role: "Bot Name",
-      image: "https://cdn.discordapp.com/guilds/1039292449325060178/users/534020157132111872/avatars/08aaa048a093ee702d7049683ca77148.webp?size=128",
-      quote: "Review quote here"
-    },
-    {
-      name: "Name",
-      role: "Bot Name",
-      image: "https://cdn.discordapp.com/guilds/1039292449325060178/users/534020157132111872/avatars/08aaa048a093ee702d7049683ca77148.webp?size=128",
-      quote: "Review quote here"
     }
   ]
 
@@ -122,6 +110,8 @@ export default function Testimonials() {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null)
   ]
+
+  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     columnRefs.forEach((ref, index) => {
@@ -150,6 +140,34 @@ export default function Testimonials() {
 
       animate()
     })
+
+    // Add intersection observer for header fade-in
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.visible);
+          } else {
+            // Remove the visible class when scrolling back up
+            entry.target.classList.remove(styles.visible);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '50px'
+      }
+    );
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
+    return () => {
+      if (headerRef.current) {
+        observer.unobserve(headerRef.current);
+      }
+    };
   }, [])
 
   const splitTestimonials = (testimonials: Testimonial[]): Testimonial[][] => {
@@ -168,7 +186,7 @@ export default function Testimonials() {
       
       <div className={styles.container} data-scroll-section>
         <div className={styles.content}>
-          <div className={styles.header} data-scroll data-scroll-speed="1">
+          <div ref={headerRef} className={styles.header} data-scroll data-scroll-speed="1">
             <h2>Love from all over the World!</h2>
             <p>
               Project Quest has just released, and we're sure future feedback will be just as amazing as the placeholders below!
