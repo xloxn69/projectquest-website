@@ -881,7 +881,7 @@
   height: 150px;
   background: linear-gradient(to bottom, transparent 0%, #000 100%);
   z-index: 9;
-  margin-bottom: -150px;
+  margin-bottom: 0;
 }
 
 /* Adjust background wrapper */

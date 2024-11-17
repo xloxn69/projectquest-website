@@ -6,6 +6,7 @@ import MobileNav from '../components/MobileNav'
 import styles from '../styles/HomePage.module.css'
 import Testimonials from '../components/Testimonials'
 import useLocomotiveScroll from '../hooks/useLocomotiveScroll'
+import ResourcesSection from '../components/ResourcesSection'
 
 export default function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -126,9 +127,11 @@ export default function HomePage() {
         <br />
         <br />
         <br />
+        
 
         <div className={styles.gridFadeSection} data-scroll-section />
         <div className={styles.blackSection}>
+          <ResourcesSection />
           <Testimonials />
           <footer className={styles.footer} data-scroll-section>
             <div className={styles.footerContent}>

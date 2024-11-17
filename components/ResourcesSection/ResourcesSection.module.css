@@ -1,0 +1,177 @@
+.gridFadeOut {
+  position: absolute;
+  top: -150px;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, #000);
+  z-index: 12;
+}
+
+.container {
+  padding: 4rem 1rem 0 1rem;
+  background: #000;
+  color: white;
+  position: relative;
+  z-index: 11;
+  margin-top: 0;
+}
+
+.content {
+  max-width: 72rem;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  position: relative;
+  z-index: 12;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.label {
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff 20%, #666);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  transition-delay: 0.3s;
+}
+
+.visible .cardGrid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .container {
+    padding: 6rem 2rem;
+  }
+}
+
+.card {
+  background: rgba(10, 10, 10, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+}
+
+/* Academy - Purple/Pink */
+.card:nth-child(1) {
+  background: linear-gradient(180deg,
+    rgba(20, 20, 20, 0.95) 0%,
+    rgba(88, 28, 135, 0.2) 100%
+  );
+}
+
+/* Blog - Dark Blue */
+.card:nth-child(2) {
+  background: linear-gradient(180deg,
+    rgba(20, 20, 20, 0.95) 0%,
+    rgba(29, 78, 216, 0.2) 100%
+  );
+}
+
+/* Community - Teal */
+.card:nth-child(3) {
+  background: linear-gradient(180deg,
+    rgba(20, 20, 20, 0.95) 0%,
+    rgba(15, 118, 110, 0.2) 100%
+  );
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Update cardLink colors */
+.card:nth-child(1) .cardLink {
+  color: rgb(192, 132, 252); /* Purple/Pink */
+}
+
+.card:nth-child(2) .cardLink {
+  color: rgb(59, 130, 246); /* Blue */
+}
+
+.card:nth-child(3) .cardLink {
+  color: rgb(20, 184, 166); /* Teal */
+}
+
+.cardImage {
+  position: relative;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.cardContent {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.cardContent h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cardContent p {
+  color: #666;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.cardLink {
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.card:hover .cardLink {
+  text-decoration: underline;
+} 
