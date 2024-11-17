@@ -33,7 +33,7 @@ export default function useLocomotiveScroll() {
           touchMultiplier: 3.5,
           resetNativeScroll: false,
           customScrollBehavior: (position: any, direction: string) => {
-            return direction === 'up' ? position * 1.4 : position;
+            return direction === 'up' ? position * 1.8 : position;
           }
         },
         tablet: {
