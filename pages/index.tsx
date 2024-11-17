@@ -121,37 +121,44 @@ export default function HomePage() {
           </div>
         </section>
 
-        <div className={styles.gridFadeSection} data-scroll-section />
-        <Testimonials />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
-        <footer className={styles.footer} data-scroll-section>
-          <div className={styles.footerContent}>
-            <div className={styles.footerColumn}>
-              <h4>Resources</h4>
-              <a href="#">Blog</a>
-              <a href="#">Documentation</a>
-              <a href="#">Developers</a>
-              <a href="#">Support</a>
+        <div className={styles.gridFadeSection} data-scroll-section />
+        <div className={styles.blackSection}>
+          <Testimonials />
+          <footer className={styles.footer} data-scroll-section>
+            <div className={styles.footerContent}>
+              <div className={styles.footerColumn}>
+                <h4>Resources</h4>
+                <a href="#">Blog</a>
+                <a href="#">Documentation</a>
+                <a href="#">Developers</a>
+                <a href="#">Support</a>
+              </div>
+              <div className={styles.footerColumn}>
+                <h4>Community</h4>
+                <a href="#">Discord Server</a>
+                <a href="#">System Status</a>
+                <a href="#">Become a Partner</a>
+              </div>
+              <div className={styles.footerColumn}>
+                <h4>Applications</h4>
+                <Link href="/toiletpaper">Toilet Paper</Link>
+                <Link href="/automater">Automater</Link>
+                <Link href="/game-arcade">Game Arcade</Link>
+              </div>
+              <div className={styles.footerColumn}>
+                <h4>Legal</h4>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+              </div>
             </div>
-            <div className={styles.footerColumn}>
-              <h4>Community</h4>
-              <a href="#">Discord Server</a>
-              <a href="#">System Status</a>
-              <a href="#">Become a Partner</a>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Applications</h4>
-              <Link href="/toiletpaper">Toilet Paper</Link>
-              <Link href="/automater">Automater</Link>
-              <Link href="/game-arcade">Game Arcade</Link>
-            </div>
-            <div className={styles.footerColumn}>
-              <h4>Legal</h4>
-              <a href="#">Terms of Service</a>
-              <a href="#">Privacy Policy</a>
-            </div>
-          </div>
-        </footer>
+          </footer>
+        </div>
       </main>
     </div>
   )
