@@ -7,6 +7,7 @@ html, body {
   color: #fff;
   overflow-x: hidden;
   box-sizing: border-box;
+  overflow-y: overlay;
 }
 
 * {
@@ -15,37 +16,38 @@ html, body {
 
 /* Enhanced scrollbar styles */
 ::-webkit-scrollbar {
-  width: 8px;
-  background-color: transparent;
-  transition: width 0.2s ease;
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100000;
+  position: fixed;
+  right: 0;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 4px;
-  margin: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  margin: 0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 0;
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  min-height: 40px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
-  width: 10px;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(0.95);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.8);
 }
 
 /* Locomotive Scroll styles */

@@ -26,6 +26,7 @@ export default function HomePage() {
   
   return (
     <div className={styles.container}>
+      <div className={styles.backgroundWrapper} />
       <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isMobileNavOpen ? styles.headerHidden : ''}`}>
         <div className={styles.headerContent}>
           <Link href="/" className={styles.logoContainer}>
