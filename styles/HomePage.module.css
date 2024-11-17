@@ -40,7 +40,7 @@
       rgba(0, 0, 0, 0.8),
       rgba(0, 0, 0, 0.8)
     ), url('/background.png');
-  background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px, cover, cover;
+  background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px, cover, 120% 120%;
   background-position: center center, center center, top left, top left, center, center;
   background-attachment: fixed;
   -webkit-background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px, cover, cover;
@@ -50,6 +50,15 @@
   min-height: 100vh;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+  animation: slowPan 30s ease-in-out infinite;
+}
+
+/* Disable animation on mobile for better performance */
+@media (max-width: 768px) {
+  .backgroundWrapper {
+    animation: none;
+    background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px, cover, cover;
+  }
 }
 
 /* iOS specific fixes */
@@ -123,11 +132,12 @@
   left: 0;
   right: 0;
   z-index: 1001;
-  background-color: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
   padding: 18px 24px;
   width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .headerContent {
@@ -141,7 +151,8 @@
 }
 
 .scrolled {
-  background-color: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .logoContainer {
@@ -931,5 +942,17 @@
         rgba(0, 0, 0, 0.8),
         rgba(0, 0, 0, 0.8)
       ), url('/background.png');
+  }
+}
+
+@keyframes slowPan {
+  0% {
+    background-position: center center, center center, top left, top left, center 0%, center 0%;
+  }
+  50% {
+    background-position: center center, center center, top left, top left, center 100%, center 100%;
+  }
+  100% {
+    background-position: center center, center center, top left, top left, center 0%, center 0%;
   }
 }
